@@ -346,7 +346,7 @@ $(function(){
 
 		framed.on('load error', function () {
 			framed.removeClass('noShow');
-			// console.clear()
+			console.clear()
 		});
 	}
 
