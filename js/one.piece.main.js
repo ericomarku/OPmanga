@@ -199,8 +199,8 @@ $(function(){
 		return false;
 	}
 
-	$('button').on('click', function () {
-		$('button').blur();
+	$(document).on('click', function () {
+		$(this).blur();
 	});
 
 	for (var i = 0; i < 1; i++) {
@@ -346,7 +346,7 @@ $(function(){
 
 		framed.on('load error', function () {
 			framed.removeClass('noShow');
-			console.clear()
+			// console.clear()
 		});
 	}
 
