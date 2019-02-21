@@ -308,6 +308,7 @@ $(function(){
 
 	function framing(path) {
 		var src = path + '.jpg';
+		var errorloop = false;
 		var error = "this.src='"+ path + ".png" +"'";
 		var framed = $('.framed');
 
@@ -321,7 +322,14 @@ $(function(){
 		};
 
 		framed.on('load error', function () {
+			if (errorloop) {
+				page = page+1;
+				cpage = cpage+1;
+
+				update(page, cpage);
+			}
 			framed.removeClass('noShow');
+			errorloop = true;
 			console.clear()
 		});
 	}
