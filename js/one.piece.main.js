@@ -475,6 +475,35 @@ $(function(){
 			update(page, cpage);
 		});
 
+		$('#nextbtn').on('click',function () {
+			if(page == chnavi[chnavi.length - 2]){
+			} else {
+				page = page+1;
+				cpage = cpage+1;
+
+				update(page, cpage);
+			}
+			console.log('next');
+		})
+
+		$('#backbtn').on('click', function () {
+			if(page == 0){
+			} else {
+			page = page-1;
+
+			if(cpage != 1){
+				cpage = cpage-1;
+			} else {
+				chindex = chnavi.indexOf(page + 1);
+				chapternumber = chindex - 1;
+				var pageprch = chnavi[chindex] - chnavi[chindex-1];
+				cpage = pageprch;
+			}
+			update(page, cpage);
+			}
+			console.log('last');
+		});
+
 
 		//ArrowKey Controll
 		$(document).keydown(function(objEvent){
