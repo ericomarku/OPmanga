@@ -1,7 +1,7 @@
 var canvas;
 let bubbles = [];
 
-var bubblenumber = 300;
+var bubblenumber = 150;
 
 var w, h;
 
@@ -22,8 +22,17 @@ function setup() {
 
 function draw() {
   if (home) {
+    var frames = frameRate()
     clear();
     translate(w/2, h/2);
+
+    if (frames <= 20) {
+      bubblenumber--;
+    }
+
+    if (frames >= 30) {
+      bubblenumber++;
+    }
 
     while (bubbles.length < bubblenumber) {
       generate(1, 30);
