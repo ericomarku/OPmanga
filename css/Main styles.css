@@ -67,6 +67,7 @@ button:hover{
   max-width: 100%;
   min-height: 120%;
   cursor: pointer;
+  padding-bottom: 10px;
 }
 .checker {
   opacity: 0.5;

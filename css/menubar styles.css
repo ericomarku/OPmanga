@@ -85,6 +85,10 @@
    z-index: 2;
  }
 
+ #singlefullbtn {
+   z-index: 2;
+ }
+
  #exitbtn {
    z-index: 1;
  }
@@ -143,6 +147,14 @@
    box-shadow: 0px 0px 25px black;
    -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
  }
+ #menu:hover > #singlefullbtn {
+   top: 8px;
+   left: 419px;
+   width: 105px;
+   height: 105px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
+ }
  #menu:hover > #exitbtn {
    top: 0px;
    left: 509px;
@@ -190,6 +202,14 @@
    color: white;
  }
  .onNow > #animebtn {
+   top: 8px !important;
+   left: 419px !important;
+   width: 105px !important;
+   height: 105px !important;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -100ms !important;
+ }
+ .onNow > #singlefullbtn {
    top: 8px !important;
    left: 419px !important;
    width: 105px !important;

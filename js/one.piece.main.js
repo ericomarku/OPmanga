@@ -1,5 +1,6 @@
 var home = true;
 var ready = false;
+var singlePage = true;
 
 var covers = 92;
 
@@ -154,24 +155,25 @@ $(function(){
 		if (lastime != chapternumber) {
 			$('.pagewhellbtn').parent().show()
 
-			if (chapternumber < chnavi.length - 2) {
-				$('#pagebox').show();
-				for (var i = mainchnavi[chapternumber + 1] + 1; i <= 52; i++) {
-					$('[data-page="'+ i +'"]').parent().hide();
-				}
-			} else {
-				$('#pagebox').hide();
+			for (var i = mainchnavi[chapternumber + 1] + 1; i <= 52; i++) {
+				$('[data-page="'+ i +'"]').parent().hide();
 			}
 		}
 
 		lastime = chapternumber;
+
+		if (chapternumber < chnavi.length - 2) {
+			$('#pagebox').show();
+		} else {
+			$('#pagebox').hide();
+		}
 
 		$("#volumewhell").scrollTop(0);
 		$("#chapterwhell").scrollTop(0);
 		$("#pagewhell").scrollTop(0);
 
 		posV = $('[data-vol="'+ volumenumber +'"]').parent().offset().top - $('[data-vol="'+ volumenumber +'"]').parent().parent().offset().top;
-		if (chapternumber < chnavi.length - 1) {
+		if (chapternumber < chnavi.length - 2) {
 			posC = $('[data-chap="'+ chapternumber +'"]').parent().offset().top - $('[data-chap="'+ chapternumber +'"]').parent().parent().offset().top;
 		} else {
 			posC = $('[data-chap="'+ (chapternumber - 1) +'"]').parent().offset().top - $('[data-chap="'+ (chapternumber - 1) +'"]').parent().parent().offset().top;
@@ -279,7 +281,6 @@ $(function(){
 
 
 	function update(indput_page, indput_cpage) {
-		var path;
 		home = false;
 		page = indput_page;
 		cpage = indput_cpage;
@@ -299,9 +300,23 @@ $(function(){
 			pagenumber = "" + cpage;
 		}
 
-		path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
+		$('#frame').empty();
 
-		framing(path);
+		if (singlePage) {
+			var path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
+			framing(path);
+		} else {
+			for (var i = 1; i < mainchnavi[chapternumber + 1] + 1; i++) {
+				var chapage
+				if (i < 10) {
+					chapage = "0" + i;
+				} else {
+					chapage = "" + i;
+				}
+				var path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ chapage;
+				framing(path);
+			}
+		}
 
 		$('#volnr').html("<p>Volume</p><p class='nr'>" + volumenumber + "</p>");
 		$('#chnr').html("<p>Chapter</p><p class='nr'>" + chapternumber + "</p>");
@@ -319,20 +334,19 @@ $(function(){
 	function framing(path) {
 		var src = path + '.jpg';
 		var error = "this.src='"+ path + ".png" +"'";
-		var framed = $('.framed');
-
-		framed.addClass('noShow');
+		var frame = $('#frame');
 
 		if(page == chnavi[chnavi.length - 2]){
-			framed.attr('src', 'img/op manga/to be continued.jpg');
+			frame.append('<img class="framed noShow" src="img/op manga/to be continued.jpg"/>');
 		} else {
-			framed.attr('src', src);
-			framed.attr('onerror', error);
+			frame.append('<img class="framed noShow" src="' + src + '" onerror="' + error + '"/>');
 		};
+
+		var framed = $('.framed');
 
 		framed.on('load error', function () {
 			framed.removeClass('noShow');
-			console.clear()
+			// console.clear()
 		});
 	}
 
@@ -402,6 +416,21 @@ $(function(){
 			}
 		});
 
+		// toggle single page or full chapter
+		$('#singlefullbtn').on('click', function() {
+			if (singlePage) {
+				$('#singlefullbtn').html('<img src="img/op manga/singlepage.png"  width="70%"/>');
+				$('#pagebox').addClass('noShow');
+				singlePage = false;
+			} else {
+				$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+				$('#pagebox').removeClass('noShow');
+				singlePage = true;
+			}
+			update(page, cpage);
+			whellbtnhidder()
+		});
+
 		$('#header').on('click', function() {
 			$('#home').fadeOut(1200);
 			home = false;
@@ -445,7 +474,7 @@ $(function(){
 		$('#frame').on('click', function(event) {
 
 			if (page == chnavi[chnavi.length - 2]){
-			} else if (findframe(event)) {
+			} else if (findframe(event) && singlePage) {
 				page = page+1;
 				cpage = cpage+1;
 
@@ -487,30 +516,39 @@ $(function(){
 		$('#nextbtn').on('click',function () {
 			if(page == chnavi[chnavi.length - 2]){
 			} else {
-				page = page+1;
-				cpage = cpage+1;
+				if (singlePage) {
+					page = page+1;
+					cpage = cpage+1;
+				} else {
+					page = chnavi[chnavi.findIndex(i => i > page)];
+					cpage = 1;
+				}
 
 				update(page, cpage);
 			}
-			console.log('next');
 		})
 
 		$('#backbtn').on('click', function () {
 			if(page == 0){
 			} else {
-			page = page-1;
+				if (singlePage) {
+					page = page-1;
 
-			if(cpage != 1){
-				cpage = cpage-1;
-			} else {
-				chindex = chnavi.indexOf(page + 1);
-				chapternumber = chindex - 1;
-				var pageprch = chnavi[chindex] - chnavi[chindex-1];
-				cpage = pageprch;
+					if(cpage != 1){
+						cpage = cpage-1;
+					} else {
+						chindex = chnavi.indexOf(page + 1);
+						chapternumber = chindex - 1;
+						var pageprch = chnavi[chindex] - chnavi[chindex-1];
+						cpage = pageprch;
+					}
+				} else {
+					page = chnavi[chnavi.findIndex(i => i > page) - 2];
+					cpage = 1;
+				}
+
+				update(page, cpage);
 			}
-			update(page, cpage);
-			}
-			console.log('last');
 		});
 
 
@@ -522,8 +560,13 @@ $(function(){
 			if(keycode == 39 && !home) {
 				if(page == chnavi[chnavi.length - 2]){
 				} else {
-					page = page+1;
-					cpage = cpage+1;
+					if (singlePage) {
+						page = page+1;
+						cpage = cpage+1;
+					} else {
+						page = chnavi[chnavi.findIndex(i => i > page)];
+						cpage = 1;
+					}
 
 					update(page, cpage);
 				}
@@ -532,16 +575,22 @@ $(function(){
 			if(keycode == 37 && !home) {
 				if(page == 0){
 				} else {
-				page = page-1;
+					if (singlePage) {
+						page = page-1;
 
-				if(cpage != 1){
-					cpage = cpage-1;
-				} else {
-					chindex = chnavi.indexOf(page + 1);
-					chapternumber = chindex - 1;
-					var pageprch = chnavi[chindex] - chnavi[chindex-1];
-					cpage = pageprch;
-				}
+						if(cpage != 1){
+							cpage = cpage-1;
+						} else {
+							chindex = chnavi.indexOf(page + 1);
+							chapternumber = chindex - 1;
+							var pageprch = chnavi[chindex] - chnavi[chindex-1];
+							cpage = pageprch;
+						}
+					} else {
+						page = chnavi[chnavi.findIndex(i => i > page) - 2];
+						cpage = 1;
+					}
+
 				update(page, cpage);
 				}
 			}
