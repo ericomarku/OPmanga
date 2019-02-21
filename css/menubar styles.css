@@ -270,8 +270,8 @@
  .vcpwhell {
    position: absolute;
    top: -40vh;
-   left: 0px;
-   width: 100%;
+   left: -10%;
+   width: 120%;
    height: 40vh;
    background: none;
    overflow-y: scroll;
