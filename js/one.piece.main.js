@@ -154,8 +154,13 @@ $(function(){
 		if (lastime != chapternumber) {
 			$('.pagewhellbtn').parent().show()
 
-			for (var i = mainchnavi[chapternumber + 1] + 1; i <= 52; i++) {
-				$('[data-page="'+ i +'"]').parent().hide();
+			if (chapternumber < chnavi.length - 2) {
+				$('#pagebox').show();
+				for (var i = mainchnavi[chapternumber + 1] + 1; i <= 52; i++) {
+					$('[data-page="'+ i +'"]').parent().hide();
+				}
+			} else {
+				$('#pagebox').hide();
 			}
 		}
 
@@ -166,7 +171,11 @@ $(function(){
 		$("#pagewhell").scrollTop(0);
 
 		posV = $('[data-vol="'+ volumenumber +'"]').parent().offset().top - $('[data-vol="'+ volumenumber +'"]').parent().parent().offset().top;
-		posC = $('[data-chap="'+ chapternumber +'"]').parent().offset().top - $('[data-chap="'+ chapternumber +'"]').parent().parent().offset().top;
+		if (chapternumber < chnavi.length - 1) {
+			posC = $('[data-chap="'+ chapternumber +'"]').parent().offset().top - $('[data-chap="'+ chapternumber +'"]').parent().parent().offset().top;
+		} else {
+			posC = $('[data-chap="'+ (chapternumber - 1) +'"]').parent().offset().top - $('[data-chap="'+ (chapternumber - 1) +'"]').parent().parent().offset().top;
+		}
 		posP = $('[data-page="'+ Number(pagenumber) +'"]').parent().offset().top - $('[data-page="'+ Number(pagenumber) +'"]').parent().parent().offset().top;
 	}
 

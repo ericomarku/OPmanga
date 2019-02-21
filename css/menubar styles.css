@@ -413,7 +413,8 @@
 
 
 .controlbtn {
-  position: absolute;
+  position: fixed;
+  bottom: 0px;
   width: 160px;
   height: 80px;
   overflow: hidden;
