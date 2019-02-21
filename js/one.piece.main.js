@@ -39,6 +39,7 @@ $(function(){
 		}, 6000, "swing", "callback");
 		$('.volumecoverframe').delay(4500).fadeIn(3500).wait(6500, function () {
 			ready = true;
+			$('body').css('overflow-y','scroll');
 			$('#covergrid').css('pointer-events', 'auto');
 		});;
 	});
