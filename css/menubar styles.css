@@ -1,0 +1,412 @@
+/* menubar */
+ #menubar {
+   position: fixed;
+   background-color: #171717;
+   top: -70px;
+   /* top: 0px; */
+   left: 0px;
+   height: 40px;
+   width: 100%;
+   border: none;
+   z-index: 10;
+   border-bottom-left-radius: 100% 10px;
+   border-bottom-right-radius: 100% 10px;
+   box-shadow: 0px 0px 20px black;
+ }
+
+ #menu {
+ }
+
+ .startposition {
+   position: absolute;
+   top: -15px;
+   left: -10px;
+   width: 60px;
+   height: 60px;
+   overflow: hidden;
+   border: none;
+   border-radius: 50%;
+   background-color: #222;
+   color: white;
+   font-family: "btnfont";
+   transform: translate(0px, 0px);
+   transition:
+     top 200ms ease-in-out,
+     left 200ms ease-in-out,
+     height 200ms ease-in-out,
+     width 200ms ease-in-out
+   ;
+ }
+
+ #menubtn {
+   z-index: 6;
+   box-shadow: 0px 0px 25px black;
+ }
+ #menubtn > img {
+   pointer-events: none;
+   transform: scale(1);
+   transition: transform 400ms ease-in-out;
+ }
+ #menubtn:hover > img {
+   transform: scale(1.1);
+ }
+
+ #homebtn {
+   z-index: 5;
+ }
+
+ #lastbtn {
+   z-index: 4;
+ }
+
+ #typechap {
+   z-index: 3;
+   font-size: 19px;
+   text-align: center;
+   transition:
+     top 200ms ease-in-out,
+     left 200ms ease-in-out,
+     height 200ms ease-in-out,
+     width 200ms ease-in-out,
+     font-size 200ms ease-in-out;
+ }
+ #typechap:hover{
+   font-size: 22px;
+ }
+ #typechap:hover::placeholder {
+   color: white;
+ }
+ #typechap:focus::placeholder {
+   opacity: 0 !important;
+ }
+
+
+ #animebtn {
+   z-index: 2;
+ }
+
+ #exitbtn {
+   z-index: 1;
+ }
+
+ .submenu > img {
+   pointer-events: none;
+   transform: scale(1);
+   transition: transform 300ms ease-in-out;
+ }
+ .submenu:hover {
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 25px 10px #0C397C !important;
+ }
+ .submenu:hover > img {
+   transform: scale(1.2);
+ }
+
+ #menu:hover > #menubtn {
+   width: 180px;
+   height: 180px;
+   top: -29px;
+   left: -27px;
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 65px 15px #0C397C;
+   -webkit-animation: activ 4000ms infinite ease-in-out -500ms;
+ }
+ #menu:hover > #homebtn {
+   top: -5px;
+   left: 137px;
+   width: 120px;
+   height: 120px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -400ms;
+ }
+ #menu:hover > #lastbtn {
+   top: 15px;
+   left: 247px;
+   width: 110px;
+   height: 110px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -300ms;
+ }
+ #menu:hover > #typechap {
+   top: 5px;
+   left: 344px;
+   width: 90px;
+   height: 90px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -200ms;
+ }
+ #menu:hover > #animebtn {
+   top: 8px;
+   left: 419px;
+   width: 105px;
+   height: 105px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
+ }
+ #menu:hover > #exitbtn {
+   top: 0px;
+   left: 509px;
+   width: 85px;
+   height: 85px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out;
+ }
+
+ .onNow > #menubtn {
+   top: -29px !important;
+   left: -27px !important;
+   width: 180px !important;
+   height: 180px !important;
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 65px 15px #0C397C;
+   -webkit-animation: activ 4000ms infinite ease-in-out -500ms !important;
+ }
+ .onNow > #homebtn {
+   top: -5px !important;
+   left: 137px !important;
+   width: 120px !important;
+   height: 120px !important;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -400ms !important;
+ }
+ .onNow > #lastbtn {
+   top: 15px !important;
+   left: 247px !important;
+   width: 110px !important;
+   height: 110px !important;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -300ms !important;
+ }
+ .onNow > #typechap {
+   top: 5px !important;
+   left: 344px !important;
+   width: 90px !important;
+   height: 90px !important;
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 25px 10px #0C397C;
+   -webkit-animation: activ 4000ms infinite ease-in-out -200ms !important;
+ }
+ .onNow > #typechap::placeholder {
+   color: white;
+ }
+ .onNow > #animebtn {
+   top: 8px !important;
+   left: 419px !important;
+   width: 105px !important;
+   height: 105px !important;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -100ms !important;
+ }
+ .onNow > #exitbtn {
+   top: 0px !important;
+   left: 509px !important;
+   width: 85px !important;
+   height: 85px !important;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out !important;
+ }
+
+ @-webkit-keyframes activ {
+   0% {
+     transform:
+     scaleX(1.02)
+     scaleY(0.98)
+     translate(-6px, 3px)
+     rotate(0deg);
+   }
+   25% {
+     transform:
+     translate(-5px, -5px)
+     rotate(-5deg);
+   }
+   50% {
+     transform:
+     scaleX(0.98)
+     scaleY(1.02)
+     translate(5px, 0px)
+     rotate(10deg);
+   }
+   75% {
+     transform:
+     translate(-4px, 8px)
+     rotate(-20deg);
+   }
+   100% {
+     transform:
+     scaleX(1.02)
+     scaleY(0.98)
+     translate(-6px, 3px)
+     rotate(0deg);
+   }
+ }
+
+
+
+ .vcpbox {
+   position: absolute;
+   width: 90px;
+ }
+
+ .vcpwhell {
+   position: absolute;
+   top: -40vh;
+   left: 0px;
+   width: 100%;
+   height: 40vh;
+   background: none;
+   overflow-y: scroll;
+   transition: top 300ms ease-in-out;
+ }
+
+ .vcpbox:hover .vcpwhell {
+   top: 0vh
+ }
+
+ .fill {
+   position: absolute;
+   top: -30px;
+   left: calc(50% - 30px);
+   width: 60px;
+   height: 60px;
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   border: 1px solid #0C397C;
+   box-shadow: 0px 0px 25px 10px #0C397C;
+   border-radius: 30px;
+   transition: top 300ms ease-in-out;
+ }
+
+ .fill > p {
+   position: absolute;
+   top: 0px;
+   left: calc(50% - 50px);
+   width: 100px;
+   font-size: 30px;
+   font-family: "vcpfont";
+   color: white;
+   text-align: center;
+   transform: translateY(-13px);
+ }
+
+ .vcpbox:hover .fill {
+   top: calc(40vh - 30px);
+ }
+
+ #volbox {
+   left: calc(50% - 90px - 45px - 15px);
+ }
+ #chbox {
+   left: calc(50% - 45px);
+ }
+ #pagebox {
+   left: calc(50% + 45px + 15px);
+ }
+
+ .vcpbtn {
+   height: 50px;
+   width: 50px;
+   border-radius: 35px;
+   border: none;
+   font-size: 30px;
+   font-family: "vcpfont";
+   background-color: #222;
+   margin-left: calc(50% - 25px);
+   color: white;
+   margin-bottom: -10px;
+   box-shadow: 0px 0px 20px black;
+ }
+
+/* .vcpbox:hover li:nth-child(9n + 1) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -1800ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 2) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -1600ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 3) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -1400ms !important
+}
+.vcpbox:hover li:nth-child(9n + 4) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -1200ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 5) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -1000ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 6) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -800ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 7) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -600ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 8) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -400ms !important;
+}
+.vcpbox:hover li:nth-child(9n + 9) .vcpbtn {
+ -webkit-animation: vcpani 1800ms infinite ease-in-out -200ms !important;
+}
+
+ @-webkit-keyframes vcpani {
+   25% {
+     transform: translateX(-10px);
+   }
+   75% {
+     transform: translateX(10px);
+   }
+ } */
+
+ .vcpbtn:hover {
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 25px 10px #0C397C;
+ }
+
+ .vcpnumber {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   height: 50px;
+   width: 100%;
+   font-size: 17px;
+   font-family: "vcpfont";
+   background-color: #222;
+   color: white;
+   cursor: default;
+   border-bottom-left-radius: 50% 45px;
+   border-bottom-right-radius: 50% 45px;
+   box-shadow: 0px 0px 20px black;
+ }
+ .vcpnumber > p {
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   width: 100%;
+   padding-top: 2px;
+   letter-spacing: 2px;
+   text-align: center;
+   margin: 0;
+   line-height: 19px;
+   opacity: 1;
+   transition:
+     opacity 300ms linear,
+     top 200ms linear
+   ;
+ }
+ .vcpnumber > .nr {
+   position: absolute;
+   top: 22px;
+   font-size: 21px;
+   transition:
+     font-size 200ms ease-in-out,
+     top 200ms ease-in-out
+   ;
+ }
+ .vcpbox:hover .vcpnumber {
+   background-image: linear-gradient(#0C397C, #28A7F4);
+   box-shadow: 0px 0px 25px 10px #0C397C;
+ }
+ .vcpbox:hover .vcpnumber > p {
+   top: -14px;
+   opacity: 0;
+ }
+ .vcpbox:hover .vcpnumber > .nr {
+   font-size: 40px;
+   top: 11px;
+   opacity: 1;
+ }

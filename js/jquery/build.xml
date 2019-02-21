@@ -1,0 +1,57 @@
+<project default="build">
+
+	<property name="js-compressor" value="yuicompressor-2.4.7.jar" />
+	
+	<property name="script-plain" value="jquery-timing.js" />
+	<property name="script-minimized" value="jquery-timing.min.js" />
+	
+	<target name="build" depends="minimize,shrinkMore,compress">
+	</target>
+	
+	<target name="minimize">
+		<length file="${script-plain}" property="bytes-before-minimize" />
+
+		<java jar="${js-compressor}" fork="true">
+			<arg value="${script-plain}"/>
+			<arg value="-o"/><arg value="${script-minimized}"/>
+			<arg value="--charset"/><arg value="utf-8"/>
+			<arg value="-v"/>
+		</java>
+
+		<length file="${script-minimized}" property="bytes-after-minimize" />
+		<echo>Minimizing ${bytes-before-minimize} =&gt; ${bytes-after-minimize} Bytes</echo>
+	</target>
+		
+	<target name="shrinkMore" depends="minimize">
+		<length file="${script-minimized}" property="bytes-before-shrink" />
+		
+		<replace file="${script-minimized}" token="_allAction" value="a"/>
+		<replace file="${script-minimized}" token="_allowPromise" value="b"/>
+		<replace file="${script-minimized}" token="_arguments" value="c"/>
+		<replace file="${script-minimized}" token="_callback" value="d"/>
+		<replace file="${script-minimized}" token="_canContinue" value="e"/>
+		<replace file="${script-minimized}" token="_context" value="f"/>
+		<replace file="${script-minimized}" token="_count" value="g"/>
+		<replace file="${script-minimized}" token="_fixOpenLoop" value="h"/>
+		<replace file="${script-minimized}" token="_method" value="i"/>
+		<replace file="${script-minimized}" token="_name" value="j"/>
+		<replace file="${script-minimized}" token="_next" value="k"/>
+		<replace file="${script-minimized}" token="_openEndAction" value="l"/>
+		<replace file="${script-minimized}" token="_triggered" value="m"/>
+		<replace file="${script-minimized}" token="_untilAction" value="n"/>
+
+		<length file="${script-minimized}" property="bytes-after-shrink" />
+		<echo>Shrinking ${bytes-before-shrink} =&gt; ${bytes-after-shrink} Bytes</echo>
+	</target>
+		
+	<target name="compress" depends="minimize">
+		<length file="${script-minimized}" property="bytes-before-compress" />
+
+		<gzip src="${script-plain}" destfile="${script-plain}.gz"/>
+		<gzip src="${script-minimized}" destfile="${script-minimized}.gz"/>
+
+		<length file="${script-minimized}.gz" property="bytes-after-compress" />
+		<echo>Compressing ${bytes-before-compress} =&gt; ${bytes-after-compress} Bytes</echo>
+	</target>
+	
+</project>

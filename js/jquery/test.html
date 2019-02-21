@@ -1,0 +1,443 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+table {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: none;
+	padding: 0;
+	margin: 1em;
+}
+td, th {
+	padding: 3px;
+	margin: 0;
+	text-align: left;
+}
+tr, th {
+	border: 1px solid #ccc;
+}
+th.method {
+	font-weight: normal;
+	font-family: monospace;
+}
+th.title {
+	padding: 1em;
+}
+th.jquery {
+	text-align: center;
+}
+td {
+	background-color: white;
+	border-right: 1px solid #ccc;
+}
+td.result {
+	width: 20px;
+	height: 20px;
+}
+td.run {
+	background: url(tests/run.png) no-repeat center center scroll;
+	color: transparent;
+}
+td.ok {
+	background: url(tests/ok.png) no-repeat center center scroll;
+	color: transparent;
+}
+td.fail {
+	background: url(tests/fail.png) no-repeat center center scroll;
+	color: transparent;
+}
+td.error {
+	background: url(tests/error.png) no-repeat center center scroll;
+	color: transparent;
+}
+td.x {
+	background-color: #eef;
+	border-right: none;
+}
+tr.y td {
+	background-color: #fee;
+}
+tr.y td.x {
+	background-color: #fdf;
+}
+h2 {
+	border-bottom: 1px solid navy;
+	margin: 2em 0;
+}
+th.method:hover, h2:hover, th.title:hover, th.jquery:hover, td:hover {
+	background-color: navy !important;
+	color: white;
+	cursor: pointer;
+}
+h1:first-child:hover {
+	cursor: pointer;
+	color: blue;
+}
+
+.summary {
+	color: maroon;
+}
+</style>
+</head>
+<body>
+
+<h1>Automated Tests for <em>jquery-timing.js</em> and <em>jquery-timing.min.js</em><br/><small>against jQuery 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10</small></h1>
+
+<script type="text/javascript">
+var jQueries = {};
+function savejQuery(type, version) {
+	version = $.extend([0,0,0], (version || $.fn.jquery).split('.')).join('.');
+	jQuery.fn.jquery = version;
+	jQueries[version] = jQueries[version] || {};
+	jQueries[version][type] = jQuery.noConflict(); 
+}
+</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.2.6.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.js')</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="jquery-timing.min.js"></script>
+<script type="text/javascript">savejQuery('jquery-timing.min.js')</script>
+
+<p><button>Run ALL tests&hellip;</button></p>
+
+<h1 class="summary"></h1>
+<h1 class="summary"></h1>
+
+<p><button>Run ALL tests&hellip;</button></p>
+
+<script type="text/javascript">var tests = {};</script>
+
+<script charset="utf-8" type="text/javascript" src="tests/test.animate.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.bind.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.deferred.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.delegate.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.dom-events.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.each.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.join.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.live.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.on.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.one.js"></script> 
+<script charset="utf-8" type="text/javascript" src="tests/test.promise.js"></script> 
+<script charset="utf-8" type="text/javascript" src="tests/test.repeat.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.then.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.wait.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.dollar.js"></script>
+<script charset="utf-8" type="text/javascript" src="tests/test.var-callback.js"></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="jquery-timing.js"></script>
+
+<script type="text/javascript">
+function compareVersion(v1,v2) {
+	v1 = v1.split('.');
+	v2 = v2.split('.');
+	for (var i=0; i<3; i++) {
+		var compare = Number(v1[i]||0) - Number(v2[i]||0);
+		if (compare != 0)
+				return compare;
+	}
+	return 0;
+}
+function checkVersionBounds(jquery, minVersion, maxVersion) {
+	return compareVersion(jquery, minVersion || jquery) >= 0 && compareVersion(jquery, maxVersion || jquery) <= 0;
+}
+
+var assertionException = new Error("assertion violated");
+var guid = 0;
+function TestCase(success, error, $) {
+	$.extend(this, {
+		$: $,
+		success: success,
+		error: error,
+		elements: $([])
+	});
+}
+$.extend(TestCase.prototype, {
+	
+	finished : false,
+	
+	check: function(){
+		if (this.finished) {
+			throw assertionException;
+		} 
+	},
+	
+	done: function() {
+		if (this.finished) {
+			throw assertionException;
+		} 
+		this.finished = true;
+		this.elements.remove();
+		this.success();
+	},
+	
+	fail: function(message) {
+		if (this.finished) {
+			throw assertionException;
+		}
+		this.finished = true;
+		this.elements.remove();
+		this.error(message);
+		throw assertionException;
+	},
+	
+	assert: function(msg, condition){
+		if (!condition) {
+			this.fail(msg);
+		}
+	},
+	
+	assertTrue: function(msg, condition){
+		this.assert(msg, condition);
+	},
+	
+	assertFalse: function(msg, condition) {
+		this.assert(msg, !condition);
+	},
+	
+	assertEquals: function(msg, expected, value) {
+		if (expected != value) {
+			this.fail(msg+'\n'+expected+' != '+value+'');
+		}
+	},
+	
+	assertNotEquals: function(msg, expected, value) {
+		if (expected == value) {
+			this.fail(msg+'\n'+expected+' == '+value+'');
+		}
+	},
+	
+	guid: function() {
+		return ++guid;
+	},
+	
+	element: function() {
+		var $elem = this.$.apply(window,arguments);
+		this.elements = this.elements.add($elem);
+		return $elem;
+	}
+	
+	
+});
+
+$(function(){
+	var count=0, passed=0, fails=0, errors=0, started, testRuns=[];
+	
+	
+	$.fn.makeFilter = function(filter, condition){
+		return this.click(function(){
+			if (!condition || !condition()) {
+				window.location.replace('#'+filter.join('|'));
+				window.location.reload();
+			}
+		}).append($('<a>').attr('name', filter.join('|')));
+	};
+	
+	
+	$('h1:first').makeFilter([]);
+	$('button').makeFilter(['*','*','*','*','*']);
+	var $summary = $('.summary');
+	
+	function updateResults() {
+		var still = count-passed-fails-errors;
+		startNextTest();
+		$summary.html('tests: '+count+'; passed:'+passed+'; failures:'+fails+'; errors:'+errors+'; still running:'+((still > 0) ? still+'&hellip;' : still));
+	}
+	
+	var filter = String(window.location.hash).replace(/^#/,'').split('|');
+	var globalVersions = ['1','99'];
+	$.each(tests, function(part, suite){
+		var $headline = $('<h2>').text(part).insertBefore($summary.last()).makeFilter([part,'*','*','*','*']);
+		var $table = $('<table>').insertBefore($summary.last());
+		
+		var partVersions = [suite._version && suite._version[0] || globalVersions[0], suite._version && suite._version[1] || globalVersions[1]];
+		$.each(suite, function(section, methods){
+			if (section == '_version') {
+				return;
+			}
+
+			var $tbody = $('<tbody>').appendTo($table);
+			var $tr = $('<tr>').append($('<th class="title">').text(section).makeFilter([part,section,'*','*','*'])).appendTo($tbody);
+
+			$.each(jQueries, function(version){
+				$('<th colspan="2" class="jquery">').text(version).attr('title','jQuery version '+version).makeFilter([part,section,'*',version,'*']).appendTo($tr);
+			});
+			var sectionVersions = [methods._version && methods._version[0] || partVersions[0], methods._version && methods._version[1] || partVersions[1]];
+			$.each(methods, function(name, testMethod){
+				if (name == '_version') {
+					return;
+				}
+
+				var methodBounds = name.split('|');
+				name = methodBounds.shift();
+				var methodVersions = [methodBounds[0] || sectionVersions[0], methodBounds[1] || sectionVersions[1]];
+				
+				var $tr = $('<tr>').append($('<th class="method">').text(name).makeFilter([part,section,name,'*','*'])).appendTo($tbody);
+				$.each(jQueries, function(version, types){
+					$.each(types, function(type, _jQuery){
+						
+						var match = (filter[0] == '*' || filter[0] == part) &&
+							(filter[1] == '*' || filter[1] == section) &&
+							(filter[2] == '*' || filter[2] == name) &&
+							(filter[3] == '*' || filter[3] == version) &&
+							(filter[4] == '*' || filter[4] == type);
+						
+						var $td = $('<td class="result">*</td>').addClass('run').attr('title','jQuery '+version+' + '+type).makeFilter([part,section,name,version,type], function(){
+							if (count == 1 && match) {
+								alert($(this).attr('title'));
+								return true;
+							}
+						}).appendTo($tr);
+						
+
+						if (!match) {
+							return $td.removeClass('run').text('?');
+						}
+						if (filter[3] == '*' && !checkVersionBounds(version, methodVersions[0],methodVersions[1])) {
+							return $td.removeClass('run').addClass('skip').text('-');
+						}
+						count++;
+						testRuns.push(function(){
+							var testCase = new TestCase(function(){
+								$td.removeClass('run').addClass('ok').text('+');
+								passed++;
+								updateResults();
+							}, function(message){
+								$td.removeClass('run').addClass('fail').text('-').attr('title',message || 'error');
+								fails++;
+								updateResults();
+							}, _jQuery);
+							try {
+								window.setTimeout(function(){
+									try {
+										testCase.assertTrue('processing timeout exceeded', testCase.finished || !$td.addClass('error'));										
+									} catch (error) {}
+								}, 10000)
+								testMethod(_jQuery, testCase);
+							} catch(error) {
+								if ((error !== assertionException) && !testCase.finished) {									
+									testCase.finished = true;
+									$td.removeClass('run').addClass('error').text('!').attr('title',String(error));
+									errors++;
+									updateResults();
+									throw error;
+								}
+							}
+						});
+					});
+				});
+			});
+		});
+	});
+	$summary.text('~'+count+' tests');
+	
+	$('td:even').addClass('x');
+	$('tr:even').addClass('y');
+	
+	function startNextTest() {
+		window.setTimeout(testRuns.splice(Math.floor(Math.random()*testRuns.length),1)[0] || '', 10);
+	}
+	
+	window.setTimeout(function(){
+		for (var i=0; i<20; i++) {
+			startNextTest();
+		}
+	}, 1000);
+});
+</script>
+</body>
+</html>

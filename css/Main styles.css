@@ -1,0 +1,73 @@
+body {
+  background-color: #070707;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transform:
+    translateY(40px)
+  ;
+}
+
+@font-face {
+  font-family: 'vcpfont';
+  src: url('font/OnePiecefont.ttf');
+}
+@font-face {
+  font-family: 'btnfont';
+  src: url('font/mangati.ttf');
+}
+
+*:focus {
+  outline:0;
+}
+
+.floatleft{
+  float: left;
+  margin-left: 5px;
+}
+
+.floatright{
+  float: right;
+  margin-right: 5px;
+}
+
+.noshow{
+  opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.5%;
+}
+::-webkit-scrollbar-track {
+  background: #202020;
+}
+::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+/* page frame */
+#frame {
+  padding-top: 86px;
+  padding-bottom: 120px;
+}
+.framed {
+  min-width: 30%;
+  max-width: 100%;
+  min-height: 120%;
+  cursor: pointer;
+}
+.checker {
+  opacity: 0.5;
+}
