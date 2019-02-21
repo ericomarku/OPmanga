@@ -337,9 +337,9 @@ $(function(){
 		var frame = $('#frame');
 
 		if(page == chnavi[chnavi.length - 2]){
-			frame.append('<img class="framed noShow" src="img/op manga/to be continued.jpg"/>');
+			frame.append('<img class="framed noShow" src="img/op manga/to be continued.jpg"/><br>');
 		} else {
-			frame.append('<img class="framed noShow" src="' + src + '" onerror="' + error + '"/>');
+			frame.append('<img class="framed noShow" src="' + src + '" onerror="' + error + '"/><br>');
 		};
 
 		var framed = $('.framed');
