@@ -42,6 +42,9 @@ $(function(){
 			ready = true;
 			$('body').css('overflow-y','scroll');
 			$('#covergrid').css('pointer-events', 'auto');
+			$('::-webkit-scrollbar').animate({
+				'width': '10px'
+			}, 1000, "swing", "callback");
 		});;
 	});
 

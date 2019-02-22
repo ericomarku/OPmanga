@@ -278,6 +278,11 @@
    transition: top 300ms ease-in-out;
  }
 
+ .vcpwhell::-webkit-scrollbar {
+   display: none;
+   width: 0px;
+ }
+
  .vcpbox:hover .vcpwhell {
    top: 0vh
  }
