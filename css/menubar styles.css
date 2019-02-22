@@ -39,7 +39,7 @@
  }
 
  #menubtn {
-   z-index: 6;
+   z-index: 7;
    box-shadow: 0px 0px 25px black;
  }
  #menubtn > img {
@@ -52,15 +52,15 @@
  }
 
  #homebtn {
-   z-index: 5;
+   z-index: 6;
  }
 
  #lastbtn {
-   z-index: 4;
+   z-index: 5;
  }
 
  #typechap {
-   z-index: 3;
+   z-index: 4;
    font-size: 19px;
    text-align: center;
    transition:
@@ -80,12 +80,11 @@
    opacity: 0 !important;
  }
 
-
- #animebtn {
-   z-index: 2;
+ #singlefullbtn {
+   z-index: 3;
  }
 
- #singlefullbtn {
+ #animebtn {
    z-index: 2;
  }
 
@@ -139,14 +138,6 @@
    box-shadow: 0px 0px 25px black;
    -webkit-animation: activ 4000ms infinite ease-in-out -200ms;
  }
- #menu:hover > #animebtn {
-   top: 8px;
-   left: 419px;
-   width: 105px;
-   height: 105px;
-   box-shadow: 0px 0px 25px black;
-   -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
- }
  #menu:hover > #singlefullbtn {
    top: 8px;
    left: 419px;
@@ -155,9 +146,17 @@
    box-shadow: 0px 0px 25px black;
    -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
  }
+ #menu:hover > #animebtn {
+   top: 18px;
+   left: 505px;
+   width: 95px;
+   height: 95px;
+   box-shadow: 0px 0px 25px black;
+   -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
+ }
  #menu:hover > #exitbtn {
    top: 0px;
-   left: 509px;
+   left: 589px;
    width: 85px;
    height: 85px;
    box-shadow: 0px 0px 25px black;
@@ -201,7 +200,7 @@
  .onNow > #typechap::placeholder {
    color: white;
  }
- .onNow > #animebtn {
+ .onNow > #singlefullbtn {
    top: 8px !important;
    left: 419px !important;
    width: 105px !important;
@@ -209,7 +208,7 @@
    box-shadow: 0px 0px 25px black;
    -webkit-animation: activ 4000ms infinite ease-in-out -100ms !important;
  }
- .onNow > #singlefullbtn {
+ .onNow > #animebtn {
    top: 8px !important;
    left: 419px !important;
    width: 105px !important;

@@ -8,16 +8,16 @@ p {
   pointer-events: none;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: #202020;
 }
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: #404040;
 }
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
 
@@ -70,7 +70,7 @@ button:hover{
   min-width: 30%;
   max-width: 100%;
   min-height: 120%;
-  cursor: pointer;
+  pointer-events: none;
   padding-bottom: 10px;
 }
 .checker {
