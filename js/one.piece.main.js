@@ -30,6 +30,15 @@ function clearConsole() {
 	console.clear()
 };
 
+function tryPNG(path) {
+	$(function(){
+		console.log('did it work?');
+		var frame = $('#frame');
+
+
+	});;
+};
+
 $(function(){
 
 	var chnavi = [];
@@ -344,20 +353,26 @@ $(function(){
 		var frame = $('#frame');
 
 		if(page == chnavi[chnavi.length - 2]){
-			frame.append('<img class="framed noShow" src="img/op manga/to be continued.jpg"/><br>');
+			frame.append('<img class="framed" src="img/op manga/to be continued.jpg"/><br>');
 		} else {
-			frame.append('<img class="framed noShow" src="' + src + '" onerror="' + error + '"/><br>');
+			frame.append('<img class="framed" src="' + path + '.jpg"/><br>');
 		};
 
 		var framed = $('.framed');
 
-		framed.on('load error', function () {
-			framed.removeClass('noShow');
+		framed.on('error', function () {
+			var newpath = $(this).attr('src');
+			var filetype = newpath.substring(newpath.length - 3, newpath.length);
+
+			newpath = newpath.substring(0, newpath.length - 4);
+
+			if (filetype == 'jpg') {
+				$(this).attr('src', newpath + '.png')
+			}
+
 			clearConsole();
 		});
 	}
-
-
 
 
 
