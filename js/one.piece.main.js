@@ -30,22 +30,14 @@ function clearConsole() {
 	console.clear()
 };
 
-function tryPNG(path) {
-	$(function(){
-		console.log('did it work?');
-		var frame = $('#frame');
 
 
-	});;
-};
-
-$(function(){
-	$('body,html').animate({scrollTop: 0}, 0);
-
+$(function() {
 	var chnavi = [];
 	var volnavi = [];
 
 	$(document).ready(function () {
+		$('body,html').animate({scrollTop: 0}, 0);
 		$('#menubar').delay(4000).animate({
 			top: '0px'
 		}, 3500, "swing", "callback");
