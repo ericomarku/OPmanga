@@ -40,6 +40,7 @@ function tryPNG(path) {
 };
 
 $(function(){
+	$('body,html').animate({scrollTop: 0}, 0);
 
 	var chnavi = [];
 	var volnavi = [];
