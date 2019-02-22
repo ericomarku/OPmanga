@@ -436,7 +436,13 @@ $(function(){
 				$('#home').fadeOut(1200);
 				home = false;
 			} else {
-				$('#home').fadeIn(1000);
+				if (!singlePage) {
+					$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+					$('#pagebox').removeClass('noShow');
+					singlePage = true;
+					update(page, cpage);
+				}
+				$('#home').fadeIn(0);
 				home = true;
 			}
 		});
@@ -453,7 +459,6 @@ $(function(){
 				singlePage = true;
 			}
 			update(page, cpage);
-			whellbtnhidder()
 		});
 
 		$('#header').on('click', function() {
