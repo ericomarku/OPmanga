@@ -37,16 +37,15 @@ $(function() {
 	var volnavi = [];
 
 	$(document).ready(function () {
-		$('body,html').animate({scrollTop: 0}, 0);
 		$('#menubar').delay(4000).animate({
 			top: '0px'
 		}, 3500, "swing", "callback");
+		$('body').delay(4000).css('overflow-y','scroll').animate({scrollTop: 0}, 0);
 		$('#covergrid').delay(3000).animate({
 			'margin-top': '6.3vw'
 		}, 6000, "swing", "callback");
 		$('.volumecoverframe').delay(4500).fadeIn(3500).wait(6500, function () {
 			ready = true;
-			$('body').css('overflow-y','scroll');
 			$('#covergrid').css('pointer-events', 'auto');
 			$('::-webkit-scrollbar').animate({
 				'width': '10px'
