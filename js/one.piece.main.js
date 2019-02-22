@@ -26,6 +26,10 @@ if (localStorage.getItem(manga + "_cpage") === null) {
 	storing("cpage", 1);
 }
 
+function clearConsole() {
+	console.clear()
+};
+
 $(function(){
 
 	var chnavi = [];
@@ -349,7 +353,7 @@ $(function(){
 
 		framed.on('load error', function () {
 			framed.removeClass('noShow');
-			// console.clear()
+			clearConsole();
 		});
 	}
 
