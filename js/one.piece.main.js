@@ -459,6 +459,7 @@ $(function(){
 				singlePage = true;
 			}
 			update(page, cpage);
+			whellbtnhidder()
 		});
 
 		$('#header').on('click', function() {
