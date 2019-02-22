@@ -37,6 +37,17 @@
 		height: 100%;
 		z-index: -1;
 	}
+	#credit {
+		margin-bottom: 3vw;
+		color: white;
+		font-family: Arial;
+		font-size: 11px;
+		display: none;
+	}
+	#credit::first-line {
+		font-size: 15px;
+		padding: 5px;
+	}
 
 
 
@@ -44,7 +55,7 @@
 	#covergrid{
 		z-index: 2;
 		margin-top: 17vw;
-		margin-bottom: 11.3vw;
+		margin-bottom: 6.3vw;
 		margin-left: auto;
 		margin-right: auto;
 		pointer-events: none;

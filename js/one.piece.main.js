@@ -58,6 +58,7 @@ $(function(){
 			$('::-webkit-scrollbar').animate({
 				'width': '10px'
 			}, 1000, "swing", "callback");
+			$('#credit').show()
 		});;
 	});
 
@@ -146,6 +147,8 @@ $(function(){
 		for (var i = 0; i < rows; i++) {
 			$('#covergrid').append('<tr>' + adding(i) + '</tr>');
 		}
+
+		// $('#covergrid').append('<tr><td id="credit" colspan="' + colums + '"><p>' + 'One Piece is written by Eiichiro Oda.<br>Published by Shueisha and Viz Media in Weekly Shonen Jump.<br>Please support the official release.' + '</p></td></tr>');
 	}
 
 
