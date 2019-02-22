@@ -4,6 +4,10 @@ body {
   overflow-y: hidden;
 }
 
+p {
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
