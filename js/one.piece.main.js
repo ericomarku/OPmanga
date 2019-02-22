@@ -58,7 +58,7 @@ $(function(){
 			$('::-webkit-scrollbar').animate({
 				'width': '10px'
 			}, 1000, "swing", "callback");
-			$('#credit').show()
+			$('#credit').show();
 		});;
 	});
 
