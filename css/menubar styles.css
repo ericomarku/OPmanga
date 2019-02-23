@@ -73,6 +73,9 @@
  #typechap:hover{
    font-size: 22px;
  }
+ #typechap:focus {
+   z-index: 6;
+ }
  #typechap:hover::placeholder {
    color: white;
  }

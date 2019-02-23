@@ -1,6 +1,7 @@
 var home = true;
 var ready = false;
 var singlePage = true;
+var password = false;
 
 var covers = 92;
 
@@ -292,6 +293,7 @@ $(function() {
 
 
 	function update(indput_page, indput_cpage) {
+		var path;
 		home = false;
 		page = indput_page;
 		cpage = indput_cpage;
@@ -313,20 +315,25 @@ $(function() {
 
 		$('#frame').empty();
 
-		if (singlePage) {
-			var path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
-			framing(path);
-		} else {
-			for (var i = 1; i < mainchnavi[chapternumber + 1] + 1; i++) {
-				var chapage
-				if (i < 10) {
-					chapage = "0" + i;
-				} else {
-					chapage = "" + i;
-				}
-				var path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ chapage;
+		if (password || chapternumber > chnavi.length - 6) {
+			if (singlePage) {
+				path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
 				framing(path);
+			} else {
+				for (var i = 1; i < mainchnavi[chapternumber + 1] + 1; i++) {
+					var chapage
+					if (i < 10) {
+						chapage = "0" + i;
+					} else {
+						chapage = "" + i;
+					}
+					path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ chapage;
+					framing(path);
+				}
 			}
+		} else {
+			path = 'img/op manga/needpassword'
+			framing(path);
 		}
 
 		$('#volnr').html("<p>Volume</p><p class='nr'>" + volumenumber + "</p>");
@@ -472,19 +479,23 @@ $(function() {
 		//type a chapter number
 		$('#typechap').keypress(function (e) {
 			if (e.which == 13) {
-				var chap = this.value;
+				var input = this.value;
 
-				if (chap == ''){
+				if (input == ''){
 				}
-				else if (chap >= chnavi.length){
+				else if (input >= chnavi.length){
 					lastchapter();
 				}
-				else if (chap >= 1 && chap < chnavi.length) {
-					page = chnavi[chap];
+				else if (input >= 1 && input < chnavi.length) {
+					page = chnavi[input];
 					cpage = 1;
 
 					update(page, cpage);
+				} else if (input == 'login') {
+					password = true;
+					update(page, cpage);
 				}
+
 				e.preventDefault();
 				$(this).val('');
 				$(this).blur();
