@@ -1,7 +1,11 @@
 var home = true;
 var ready = false;
 var singlePage = true;
-var password = false;
+var loggedIn = false;
+
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 b=["\\8\\9\\a\\F\\G\\E\\D\\a\\5\\l\\C\\H\\J\\n","\\m\\7\\5\\5\\h\\3\\4\\d\\8\\4\\3\\e\\9\\3\\o\\7\\4\\3\\4\\d\\a\\3\\g\\8\\9\\9\\p\\7\\5\\x\\z","\\8\\y\\a\\5\\4"];B I(j){6 f=j;6 i=b[0];r(f==i){w[b[2]](b[1])}t{6 k=A(f);u k}}6 c=["\\e\\K\\l\\7\\n","\\m\\7\\5\\5\\h\\3\\4\\d\\8\\4\\3\\e\\9\\3\\o\\7\\4\\3\\4\\d\\a\\3\\g\\8\\9\\9\\p\\7\\5\\x\\z","\\8\\y\\a\\5\\4"];B A(v){6 q=v;6 s=c[0];r(q!=s){w[c[2]](c[1])}t{u L}}',48,48,'|||x20|x74|x72|var|x6F|x61|x73|x65|_0x9dfa|_0xa217|x68|x69|_0x55f2x3|x50|x79|_0x55f2x4|_0x55f2x2|_0x55f2x5|x33|x53|x70|x6E|x77|_0xb995x3|if|_0xb995x4|else|return|_0xb995x2|window|x64|x6C|x2E|loginIn|function|x76|x32|x31|x46|x6B|x4B|login|x42|x3C|true'.split('|'),0,{}))
+
 
 var covers = 92;
 
@@ -315,7 +319,7 @@ $(function() {
 
 		$('#frame').empty();
 
-		if (password || chapternumber > chnavi.length - 6) {
+		if (loggedIn || chapternumber > chnavi.length - 6) {
 			if (singlePage) {
 				path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
 				framing(path);
@@ -491,8 +495,8 @@ $(function() {
 					cpage = 1;
 
 					update(page, cpage);
-				} else if (input == 'login') {
-					password = true;
+				} else if (login(input)) {
+					loggedIn = true;
 					update(page, cpage);
 				}
 
