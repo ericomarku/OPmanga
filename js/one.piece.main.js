@@ -448,6 +448,7 @@ $(function() {
 				$('#home').fadeIn(0);
 				home = true;
 			}
+			$('body,html').animate({scrollTop: 0}, 0);
 		});
 
 		// toggle single page or full chapter
