@@ -45,7 +45,7 @@ $(function() {
 		$('#menubar').delay(4000).animate({
 			top: '0px'
 		}, 3500, "swing", "callback");
-		$('body').delay(4000).css('overflow-y','scroll').animate({scrollTop: 0}, 0);
+		$('body').delay(4000).css('overflow-y','scroll');
 		$('#covergrid').delay(3000).animate({
 			'margin-top': '6.3vw'
 		}, 6000, "swing", "callback");
