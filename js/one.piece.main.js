@@ -634,6 +634,37 @@ $(function() {
 				}
 			}
 		});
+
+		var ar = new Array(38, 40);
+
+		$(document).keydown(function(e) {
+     	var key = e.which;
+
+			if ($.inArray(key,ar) > -1) {
+				e.preventDefault();
+			}
+
+			var scrolled = $(document).scrollTop();
+
+    	if (key == 38) {
+				scrolled -= 20;
+				$('html, body').animate({
+					scrollTop: scrolled
+				}, 0);
+				console.log(scrolled);
+			}
+
+			if (key == 40) {
+				scrolled += 20;
+				$('html, body').animate({
+					scrollTop: scrolled
+				}, 0);
+				console.log(scrolled);
+			}
+
+    	return true;
+		});
+
 	return page;
 	};
 

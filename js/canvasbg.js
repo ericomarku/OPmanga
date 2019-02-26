@@ -1,14 +1,16 @@
 var canvas;
 let bubbles = [];
 
-var bubblenumber = 150;
+var bubblenumber = 50;
 
 var w, h;
 
 function windowResized() {
-  w = windowWidth;
-  h = windowHeight;
-  resizeCanvas(w, h);
+  if (home) {
+    w = windowWidth;
+    h = windowHeight;
+    resizeCanvas(w, h);
+  }
 }
 
 function setup() {
@@ -23,6 +25,7 @@ function setup() {
 function draw() {
   if (home) {
     var frames = frameRate()
+    frameRate(30);
     clear();
     translate(w/2, h/2);
 
