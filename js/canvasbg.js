@@ -18,6 +18,9 @@ function setup() {
   h = windowHeight;
   canvas = createCanvas(w, h);
   canvas.parent('BackgroundContainer');
+  canvas.style('position', 'fixed');
+  canvas.style('top', '0px');
+  canvas.style('left', '0px');
   canvas.style('z-index', '-1');
   generate(bubblenumber, 100);
 }
