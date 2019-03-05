@@ -1,0 +1,98 @@
+#covergrid{
+  z-index: 2;
+  margin-top: 35vh;
+  margin-bottom: 3.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none;
+
+  td {
+    vertical-align: top;
+  }
+  td:nth-child(3) {
+    transform: translateY(1.45vw);
+  }
+  td:nth-child(4n + 1) {
+    transform: translateY(-5.45vw);
+  }
+
+  #header{
+    margin-top: 1vw;
+    margin-bottom: 6.1vw;
+    height: 22vh;
+    cursor: pointer;
+  }
+
+  .volumecoverframe {
+    position: relative;
+    overflow: hidden;
+    width: 14vw;
+    height: 14vw;
+    /* height: 20.5vw; */
+    margin: 1.3vw;
+    border-radius: 50%;
+    /* transform: rotate(30deg); */
+    box-shadow: 0px 0px 2vw $shadowColor;
+    display: none;
+    background: none;
+
+    .shadowdiv {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      border-radius: calc(50% + 10px);
+      box-shadow: 0px 0px 2.45vw 35px $shadowColor inset;
+      background: none;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .volumecover {
+      position:absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 50%;
+      margin: none;
+      background: none;
+      overflow: hidden;
+      opacity: 1;
+      z-index: 0;
+
+      .cover{
+        position:absolute;
+        pointer-events: none;
+        top: -4.5vw;
+        left: 0px;
+        width: 100%;
+      }
+      .number {
+        vertical-align: middle;
+        line-height: 1px;
+        margin: auto;
+        margin-bottom: 1.6vw;
+        pointer-events: none;
+        font-family: "volumefont";
+        transform: rotate(0deg);
+        color: $fill;
+        letter-spacing: -0.6vw;
+        text-shadow:
+        0px 0px 25px $shadowColor,
+        0px 0px 25px $shadowColor;
+        z-index: 3;
+      }
+    }
+    &:hover {
+      -webkit-animation: move 2000ms infinite ease-in-out;
+    }
+  }
+  .moveRandom {
+    -webkit-animation: random 1500ms ease-in-out;
+  }
+  .moveModnar {
+    -webkit-animation: modnar 1500ms ease-in-out;
+  }
+}

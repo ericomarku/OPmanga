@@ -1,0 +1,67 @@
+
+
+@-webkit-keyframes random {
+  25% {
+    @include randomAnimation(2, 1);
+  }
+  75% {
+    @include randomAnimation(1, 2);
+  }
+}
+
+@-webkit-keyframes modnar {
+  25% {
+    @include randomAnimation(1, 2);
+  }
+  75% {
+    @include randomAnimation(2, 1);
+  }
+}
+
+@-webkit-keyframes move {
+  10% {
+    @include moveAnimation(10deg, 14.5vw, 13.5vw, 0.8vw);
+  }
+  20% {
+    @include moveAnimation(17deg, 14vw, 14vw, 1.3vw);
+  }
+  30% {
+    @include moveAnimation(15deg, 13.5vw, 14.5vw, 0.8vw);
+  }
+  40% {
+    @include moveAnimation(3deg, 14vw, 14vw, 1.3vw);
+  }
+  50% {
+    @include moveAnimation(0deg, 14.5vw, 13.5vw, 0.8vw);
+  }
+  60% {
+    @include moveAnimation(-10deg, 14vw, 14vw, 1.3vw);
+  }
+  70% {
+    @include moveAnimation(-17deg, 13.5vw, 14.5vw, 0.8vw);
+  }
+  80% {
+    @include moveAnimation(-15deg, 14vw, 14vw, 1.3vw);
+  }
+  90% {
+    @include moveAnimation(-3deg, 14.5vw, 13.5vw, 0.8vw);
+  }
+}
+
+@-webkit-keyframes activ {
+  0% {
+    @include activAnimation(0deg, 1.02, 0.98, -6px, 3px);
+  }
+  25% {
+    @include activAnimation(-5deg, 1, 1, -5px, -5px);
+  }
+  50% {
+    @include activAnimation(10deg, 0.98, 1.02, 5px, 0px);
+  }
+  75% {
+    @include activAnimation(-20deg, 1, 1, -4px, 8px);
+  }
+  100% {
+    @include activAnimation(0deg, 1.02, 0.98, -6px, 3px);
+  }
+}

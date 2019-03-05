@@ -1,0 +1,30 @@
+$randomStand: 14vw;
+$randomChange: 0.2vw;
+$randomRotate: 5deg;
+$randomMargin: 1.1vw;
+
+@mixin randomAnimation($num1, $num2) {
+  $pos: ($num1 - $num2);
+  $Change: ($randomChange * $pos);
+  transform:
+    rotate($randomRotate * $pos);
+  width: ($randomStand + $Change);
+  height: ($randomStand - $Change);
+  margin: $randomMargin;
+}
+
+@mixin moveAnimation($rotate, $width, $height, $margin) {
+  transform:
+    rotate($rotate);
+  width: $width;
+  height: $height;
+  margin: $margin;
+}
+
+@mixin activAnimation($rotate, $scaleX, $scaleY, $X, $Y) {
+  transform:
+  rotate($rotate)
+  scaleX($scaleX)
+  scaleY($scaleY)
+  translate($X, $Y);
+}

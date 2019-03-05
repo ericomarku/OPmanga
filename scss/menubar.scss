@@ -1,0 +1,429 @@
+/* menubar */
+ #menubar {
+   position: fixed;
+   background-color: #171717;
+   top: -70px;
+   left: 0px;
+   height: 40px;
+   width: 100%;
+   border: none;
+   z-index: 10;
+   border-bottom-left-radius: 100% 10px;
+   border-bottom-right-radius: 100% 10px;
+   box-shadow: 0px 0px 20px black;
+ }
+
+ #menu {
+   .startposition {
+     position: absolute;
+     top: -15px;
+     left: -10px;
+     width: 60px;
+     height: 60px;
+     overflow: hidden;
+     border: none;
+     border-radius: 50%;
+     background-color: #222;
+     color: white;
+     font-family: "btnfont";
+     transform: translate(0px, 0px);
+     transition:
+     top 200ms ease-in-out,
+     left 200ms ease-in-out,
+     height 200ms ease-in-out,
+     width 200ms ease-in-out
+     ;
+   }
+
+   #menubtn {
+     z-index: 7;
+     box-shadow: 0px 0px 25px black;
+     img {
+       pointer-events: none;
+       transform: scale(1);
+       transition: transform 400ms ease-in-out;
+     }
+     &:hover > img {
+       transform: scale(1.1);
+     }
+   }
+
+   #homebtn {
+     z-index: 6;
+   }
+
+   #lastbtn {
+     z-index: 5;
+   }
+
+   #typechap {
+     z-index: 4;
+     font-size: 19px;
+     text-align: center;
+     transition:
+     top 200ms ease-in-out,
+     left 200ms ease-in-out,
+     height 200ms ease-in-out,
+     width 200ms ease-in-out,
+     font-size 200ms ease-in-out;
+     &:hover{
+       font-size: 22px;
+     }
+     &:hover::placeholder {
+       color: white;
+     }
+     &:focus {
+       z-index: 6;
+     }
+     &:focus::placeholder {
+       opacity: 0 !important;
+     }
+   }
+
+   #singlefullbtn {
+     z-index: 3;
+   }
+
+   #animebtn {
+     z-index: 2;
+   }
+
+   #exitbtn {
+     z-index: 1;
+   }
+
+   .submenu > img {
+     pointer-events: none;
+     transform: scale(1);
+     transition: transform 300ms ease-in-out;
+   }
+
+   .submenu:hover {
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     box-shadow: 0px 0px 25px 10px $darkBlue !important;
+     img {
+       transform: scale(1.2);
+     }
+   }
+
+   &:hover {
+     #menubtn {
+       width: 180px;
+       height: 180px;
+       top: -29px;
+       left: -27px;
+       background-image: linear-gradient($darkBlue, $lightBlue);
+       box-shadow: 0px 0px 65px 15px $darkBlue;
+       -webkit-animation: activ 4000ms infinite ease-in-out -500ms;
+     }
+
+     #homebtn {
+       top: -5px;
+       left: 137px;
+       width: 120px;
+       height: 120px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out -400ms;
+     }
+
+     #lastbtn {
+       top: 15px;
+       left: 247px;
+       width: 110px;
+       height: 110px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out -300ms;
+     }
+
+     #typechap {
+       top: 5px;
+       left: 344px;
+       width: 90px;
+       height: 90px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out -200ms;
+     }
+
+     #singlefullbtn {
+       top: 8px;
+       left: 419px;
+       width: 105px;
+       height: 105px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
+     }
+
+     #animebtn {
+       top: 18px;
+       left: 505px;
+       width: 95px;
+       height: 95px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out -100ms;
+     }
+
+     #exitbtn {
+       top: 0px;
+       left: 589px;
+       width: 85px;
+       height: 85px;
+       box-shadow: 0px 0px 25px black;
+       -webkit-animation: activ 4000ms infinite ease-in-out;
+     }
+   }
+ }
+
+
+
+
+
+ .onNow {
+   #menubtn {
+     top: -29px !important;
+     left: -27px !important;
+     width: 180px !important;
+     height: 180px !important;
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     box-shadow: 0px 0px 65px 15px $darkBlue;
+     -webkit-animation: activ 4000ms infinite ease-in-out -500ms !important;
+   }
+
+   #homebtn {
+     top: -5px !important;
+     left: 137px !important;
+     width: 120px !important;
+     height: 120px !important;
+     box-shadow: 0px 0px 25px black;
+     -webkit-animation: activ 4000ms infinite ease-in-out -400ms !important;
+   }
+
+   #lastbtn {
+     top: 15px !important;
+     left: 247px !important;
+     width: 110px !important;
+     height: 110px !important;
+     box-shadow: 0px 0px 25px black;
+     -webkit-animation: activ 4000ms infinite ease-in-out -300ms !important;
+   }
+
+   #typechap {
+     top: 5px !important;
+     left: 344px !important;
+     width: 90px !important;
+     height: 90px !important;
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     box-shadow: 0px 0px 25px 10px $darkBlue;
+     -webkit-animation: activ 4000ms infinite ease-in-out -200ms !important;
+     &::placeholder {
+       color: white;
+     }
+   }
+
+   #singlefullbtn {
+     top: 8px !important;
+     left: 419px !important;
+     width: 105px !important;
+     height: 105px !important;
+     box-shadow: 0px 0px 25px black;
+     -webkit-animation: activ 4000ms infinite ease-in-out -100ms !important;
+   }
+
+   #animebtn {
+     top: 8px !important;
+     left: 419px !important;
+     width: 105px !important;
+     height: 105px !important;
+     box-shadow: 0px 0px 25px black;
+     -webkit-animation: activ 4000ms infinite ease-in-out -100ms !important;
+   }
+
+   #exitbtn {
+     top: 0px !important;
+     left: 509px !important;
+     width: 85px !important;
+     height: 85px !important;
+     box-shadow: 0px 0px 25px black;
+     -webkit-animation: activ 4000ms infinite ease-in-out !important;
+   }
+ }
+
+
+
+
+
+ .vcpbox {
+   position: absolute;
+   width: 90px;
+   .vcpwhell {
+     position: absolute;
+     top: -40vh;
+     left: -10%;
+     width: 120%;
+     height: 40vh;
+     background: none;
+     overflow-y: scroll;
+     transition: top 300ms ease-in-out;
+     &::-webkit-scrollbar {
+       display: none;
+       width: 0px;
+     }
+   }
+   &:hover .vcpwhell {
+     top: 0vh
+   }
+
+   .fill {
+     position: absolute;
+     top: -30px;
+     left: calc(50% - 30px);
+     width: 60px;
+     height: 60px;
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     border: 1px solid $darkBlue;
+     box-shadow: 0px 0px 25px 10px $darkBlue;
+     border-radius: 30px;
+     transition: top 300ms ease-in-out;
+     p {
+       position: absolute;
+       top: 0px;
+       left: calc(50% - 50px);
+       width: 100px;
+       font-size: 30px;
+       font-family: "vcpfont";
+       color: white;
+       text-align: center;
+       transform: translateY(-13px);
+     }
+   }
+   &:hover .fill {
+     top: calc(40vh - 30px);
+   }
+
+   .vcpnumber {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     height: 50px;
+     width: 100%;
+     font-size: 17px;
+     font-family: "vcpfont";
+     background-color: #222;
+     color: white;
+     cursor: default;
+     border-bottom-left-radius: 50% 45px;
+     border-bottom-right-radius: 50% 45px;
+     box-shadow: 0px 0px 20px black;
+     p {
+       position: absolute;
+       top: 2px;
+       left: 2px;
+       width: 100%;
+       padding-top: 2px;
+       letter-spacing: 2px;
+       text-align: center;
+       margin: 0;
+       line-height: 19px;
+       opacity: 1;
+       transition:
+       opacity 300ms linear,
+       top 200ms linear
+       ;
+     }
+     .nr {
+       position: absolute;
+       top: 22px;
+       font-size: 21px;
+       transition:
+       font-size 200ms ease-in-out,
+       top 200ms ease-in-out
+       ;
+     }
+   }
+   &:hover .vcpnumber {
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     box-shadow: 0px 0px 25px 10px $darkBlue;
+     p {
+       top: -14px;
+       opacity: 0;
+     }
+     .nr {
+       font-size: 40px;
+       top: 11px;
+       opacity: 1;
+     }
+   }
+
+   .vcpbtn {
+     height: 50px;
+     width: 50px;
+     border-radius: 35px;
+     border: none;
+     font-size: 30px;
+     font-family: "vcpfont";
+     background-color: #222;
+     margin-left: calc(50% - 25px);
+     color: white;
+     margin-bottom: -10px;
+     box-shadow: 0px 0px 20px black;
+     &:hover {
+       background-image: linear-gradient($darkBlue, $lightBlue);
+       box-shadow: 0px 0px 25px 10px $darkBlue;
+     }
+   }
+ }
+
+ #volbox {
+   left: calc(50% - 90px - 45px - 15px);
+ }
+ #chbox {
+   left: calc(50% - 45px);
+ }
+ #pagebox {
+   left: calc(50% + 45px + 15px);
+ }
+
+
+
+.controlbtn {
+  position: fixed;
+  bottom: 0px;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border: none;
+  background-image: linear-gradient(#111, #000);
+  color: white;
+  font-family: "vcpfont";
+  font-size: 100px;
+  box-shadow: 0px 0px 20px black;
+  transition: font-size 200ms ease-in-out;
+  &:hover {
+    background-image: linear-gradient($lightBlue, $darkBlue);
+    box-shadow: 0px 0px 25px 10px $darkBlue;
+    font-size: 120px
+  }
+}
+
+#backbtn {
+  border-top-right-radius: 110px;
+  left: 0px;
+  p {
+    transform: translate(-15px,-90px);
+    transition: transform 200ms ease-in-out;
+  }
+  &:hover > p {
+    transform: translate(-25px,-120px);
+  }
+}
+
+#nextbtn {
+  border-top-left-radius: 110px;
+  right: 0px;
+  p {
+    transform: translate(10px, -90px);
+    transition: transform 200ms ease-in-out;
+  }
+  &:hover > p {
+    transform: translate(20px, -120px);
+  }
+}

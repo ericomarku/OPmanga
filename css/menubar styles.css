@@ -3,7 +3,6 @@
    position: fixed;
    background-color: #171717;
    top: -70px;
-   /* top: 0px; */
    left: 0px;
    height: 40px;
    width: 100%;
@@ -14,8 +13,6 @@
    box-shadow: 0px 0px 20px black;
  }
 
- #menu {
- }
 
  .startposition {
    position: absolute;
@@ -341,43 +338,6 @@
    margin-bottom: -10px;
    box-shadow: 0px 0px 20px black;
  }
-
-/* .vcpbox:hover li:nth-child(9n + 1) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -1800ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 2) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -1600ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 3) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -1400ms !important
-}
-.vcpbox:hover li:nth-child(9n + 4) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -1200ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 5) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -1000ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 6) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -800ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 7) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -600ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 8) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -400ms !important;
-}
-.vcpbox:hover li:nth-child(9n + 9) .vcpbtn {
- -webkit-animation: vcpani 1800ms infinite ease-in-out -200ms !important;
-}
-
- @-webkit-keyframes vcpani {
-   25% {
-     transform: translateX(-10px);
-   }
-   75% {
-     transform: translateX(10px);
-   }
- } */
 
  .vcpbtn:hover {
    background-image: linear-gradient(#0C397C, #28A7F4);

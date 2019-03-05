@@ -1,85 +1,73 @@
 body {
   background-color: #070707;
   overflow-x: hidden;
-  overflow-y: hidden;
-}
+  overflow-y: hidden; }
 
 canvas {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: -1;
-}
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1; }
 
 p {
-  pointer-events: none;
-}
+  pointer-events: none; }
 
 body::-webkit-scrollbar {
-  width: 8px;
-}
+  width: 8px; }
+
 body::-webkit-scrollbar-track {
-  background: #202020;
-}
+  background: #202020; }
+
 body::-webkit-scrollbar-thumb {
-  background: #404040;
-}
+  background: #404040; }
+
 body::-webkit-scrollbar-thumb:hover {
-  background: #555555;
-}
+  background: #555555; }
 
 li {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  transform:
-    translateY(40px)
-  ;
-}
+  -webkit-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  transform: translateY(40px); }
 
 @font-face {
   font-family: 'vcpfont';
-  src: url('font/OnePiecefont.ttf');
-}
+  src: url("font/OnePiecefont.ttf"); }
+
 @font-face {
   font-family: 'btnfont';
-  src: url('font/mangati.ttf');
-}
+  src: url("font/mangati.ttf"); }
 
 *:focus {
-  outline:0;
-}
+  outline: 0; }
 
-.floatleft{
+.floatleft {
   float: left;
-  margin-left: 5px;
-}
+  margin-left: 5px; }
 
-.floatright{
+.floatright {
   float: right;
-  margin-right: 5px;
-}
+  margin-right: 5px; }
 
-.noshow{
-  opacity: 0;
-}
+.noshow {
+  opacity: 0; }
 
-button:hover{
-  cursor: pointer;
-}
+button:hover {
+  cursor: pointer; }
 
 /* page frame */
 #frame {
   padding-top: 86px;
-  padding-bottom: 120px;
-}
+  padding-bottom: 120px; }
+
 .framed {
   min-width: 30%;
   max-width: 100%;
   min-height: 120%;
   pointer-events: none;
-  padding-bottom: 10px;
-}
+  padding-bottom: 10px; }
+
 .checker {
-  opacity: 0.5;
-}
+  opacity: 0.5; }
