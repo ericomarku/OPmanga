@@ -4,17 +4,6 @@ body {
   overflow-y: hidden;
 }
 
-canvas {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: -1;
-}
-
-p {
-  pointer-events: none;
-}
-
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -26,6 +15,17 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-thumb:hover {
   background: #555555;
+}
+
+canvas {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+}
+
+p {
+  pointer-events: none;
 }
 
 li {
