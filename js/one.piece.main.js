@@ -359,14 +359,12 @@ $(function() {
 	};
 
 	function framing(path) {
-		var src = path + '.jpg';
-		var error = "this.src='"+ path + ".png" +"'";
 		var frame = $('#frame');
 
 		if(page == chnavi[chnavi.length - 2]){
 			frame.append('<img class="framed" src="img/op manga/to be continued.jpg"/><br>');
 		} else {
-			frame.append('<img class="framed" src="' + path + '.jpg"/><br>');
+			frame.append('<img class="framed" src="' + path + '.png"/><br>');
 		};
 
 		var framed = $('.framed');
@@ -377,8 +375,8 @@ $(function() {
 
 			newpath = newpath.substring(0, newpath.length - 4);
 
-			if (filetype == 'jpg') {
-				$(this).attr('src', newpath + '.png')
+			if (filetype == 'png') {
+				$(this).attr('src', newpath + '.jpg')
 			}
 
 			clearConsole();
@@ -474,6 +472,9 @@ $(function() {
 			} else {
 				if (!singlePage) {
 					$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+					$('#volbox').css('transform', 'translateX(-165%)');
+					$('#chbox').css('transform', 'translateX(-50%)');
+					$('#pagebox').css('transform', 'translateX(65%)');
 					$('#pagebox').removeClass('noShow');
 					singlePage = true;
 					update(page);
@@ -488,10 +489,16 @@ $(function() {
 		$('#singlefullbtn').on('click', function() {
 			if (singlePage) {
 				$('#singlefullbtn').html('<img src="img/op manga/singlepage.png"  width="70%"/>');
+				$('#volbox').css('transform', 'translateX(-107.5%)');
+				$('#chbox').css('transform', 'translateX(7.5%)');
+				$('#pagebox').css('transform', 'translateX(122.5%)');
 				$('#pagebox').addClass('noShow');
 				singlePage = false;
 			} else {
 				$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+				$('#volbox').css('transform', 'translateX(-165%)');
+				$('#chbox').css('transform', 'translateX(-50%)');
+				$('#pagebox').css('transform', 'translateX(65%)');
 				$('#pagebox').removeClass('noShow');
 				singlePage = true;
 			}
