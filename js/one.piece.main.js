@@ -11,7 +11,7 @@ var covers = 92;
 
 var manga = "One Piece"
 
-var page, cpage, volumenumber, chapternumber, pagenumber;
+var page, volumenumber, chapternumber, pagenumber;
 
 var posV, posC, posP;
 
@@ -26,9 +26,6 @@ function storing(witch, val) {
 
 if (localStorage.getItem(manga + "_page") === null) {
 	storing("page", 1);
-}
-if (localStorage.getItem(manga + "_cpage") === null) {
-	storing("cpage", 1);
 }
 
 function clearConsole() {
@@ -296,20 +293,17 @@ $(function() {
 
 
 
-	function update(indput_page, indput_cpage) {
-		var path;
+	function update(indput_page) {
+		var path, cpage;
 		home = false;
 		page = indput_page;
-		cpage = indput_cpage;
 
 		chindex = chnavi.findIndex(i => i > page);
 		chapternumber = chindex - 1;
 		volindex = volnavi.findIndex(i => i > page);
 		volumenumber = volindex - 1;
 
-		if (page == chnavi[chapternumber]) {
-			cpage = 1;
-		}
+		cpage = page - chnavi[chapternumber] + 1;
 
 		if (cpage < 10) {
 			pagenumber = "0" + cpage;
@@ -323,6 +317,11 @@ $(function() {
 			if (singlePage) {
 				path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
 				framing(path);
+
+				// for (var i = page - 3; i < page + 3; i++) {
+				// 	readingPages(i);
+				// }
+
 			} else {
 				for (var i = 1; i < mainchnavi[chapternumber + 1] + 1; i++) {
 					var chapage
@@ -334,6 +333,13 @@ $(function() {
 					path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ chapage;
 					framing(path);
 				}
+				// for (var i = chnavi[chapternumber-1]; i <= chnavi[chapternumber + 2]; i++) {
+				// 	if (i >= chnavi[chnavi.length -1]){
+				//
+				// 	} else {
+				// 		readingPages(i);
+				// 	}
+				// }
 			}
 		} else {
 			path = 'img/op manga/needpassword'
@@ -349,7 +355,6 @@ $(function() {
 		$('#home').hide();
 
 		storing("page", page);
-		storing("cpage", cpage);
 		whellbtnhidder()
 	};
 
@@ -381,44 +386,73 @@ $(function() {
 	}
 
 
+	// function readingPages(indput_page) {
+	// 	var readypath, newpage;
+	// 	var readypage = indput_page;
+	// 	var newvolumenumber, newchapternumber, newpagenumber;
+	//
+	// 	chindex = chnavi.findIndex(j => j > readypage);
+	// 	newchapternumber = chindex - 1;
+	// 	volindex = volnavi.findIndex(j => j > readypage);
+	// 	newvolumenumber = volindex - 1;
+	//
+	// 	newpage = readypage - chnavi[newchapternumber] + 1;
+	//
+	// 	if (newpage < 10) {
+	// 		newpagenumber = "0" + newpage;
+	// 	} else {
+	// 		newpagenumber = "" + newpage;
+	// 	}
+	//
+	// 	readypath = 'Manga/'+ manga +' Vol. '+ newvolumenumber +'/'+ manga +' '+ newchapternumber +'/'+ newpagenumber;
+	//
+	// 	var src = readypath + '.jpg';
+	// 	var error = "this.src='"+ readypath + ".png" +"'";
+	// 	var frame = $('#frame');
+	//
+	// 	if(readypage == chnavi[chnavi.length - 2]){
+	// 		frame.append('<img class="readingPages" style="display: none" src="img/op manga/to be continued.jpg"/>');
+	// 	} else {
+	// 		frame.append('<img class="readingPages" style="display: none" src="' + readypath + '.jpg"/>');
+	// 	};
+	//
+	// 	var framed = $('.readingPages');
+	//
+	// 	framed.on('error', function () {
+	// 		var newpath = $(this).attr('src');
+	// 		var filetype = newpath.substring(newpath.length - 3, newpath.length);
+	//
+	// 		newpath = newpath.substring(0, newpath.length - 4);
+	//
+	// 		if (filetype == 'jpg') {
+	// 			$(this).attr('src', newpath + '.png')
+	// 		}
+	//
+	// 		clearConsole();
+	// 	});
+	// }
+
 
 	function lastchapter() {
 		var lastch = chnavi.length - 3;
 
 		page = chnavi[lastch];
-		cpage = 1;
 
-		update(page, cpage);
+		update(page);
 	}
 
 	var Page = function(){
 
 		page = storage('page');
-		cpage = storage('cpage');
 
 		if (!page) {
 			page = 0;
-			cpage = 1;
 		}
 
 		//bact to top
 		$(window).scroll(function() {
 			var wScroll = $(this).scrollTop();
 		});
-
-		//volnr
-		var volindex = volnavi.findIndex(i => i > page);
-		var volumenumber = volindex - 1;
-		$('#volnr').html("Vol. " + volumenumber);
-
-		//Chnr
-		var chindex = chnavi.findIndex(i => i > page);
-		var chapternumber = chindex - 1;
-		$('#chnr').html("Ch. " + chapternumber);
-
-		$('#pagenr').html("Page " + cpage);
-
-
 
 
 
@@ -428,9 +462,8 @@ $(function() {
 			var cover = $(this).attr('data-cover');
 
 			page = volnavi[cover];
-			cpage = 1;
 
-			update(page, cpage);
+			update(page);
 		});
 
 		//back to home
@@ -443,7 +476,7 @@ $(function() {
 					$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
 					$('#pagebox').removeClass('noShow');
 					singlePage = true;
-					update(page, cpage);
+					update(page);
 				}
 				$('#home').fadeIn(0);
 				home = true;
@@ -462,7 +495,7 @@ $(function() {
 				$('#pagebox').removeClass('noShow');
 				singlePage = true;
 			}
-			update(page, cpage);
+			update(page);
 			whellbtnhidder()
 		});
 
@@ -493,12 +526,11 @@ $(function() {
 				}
 				else if (input >= 1 && input < chnavi.length) {
 					page = chnavi[input];
-					cpage = 1;
 
-					update(page, cpage);
+					update(page);
 				} else if (login(input)) {
 					loggedIn = true;
-					update(page, cpage);
+					update(page);
 				}
 
 				e.preventDefault();
@@ -515,9 +547,8 @@ $(function() {
 			if (page == chnavi[chnavi.length - 2]){
 			} else if (findframe(event) && singlePage) {
 				page = page+1;
-				cpage = cpage+1;
 
-				update(page, cpage);
+				update(page);
 			}
 	  });
 
@@ -526,9 +557,8 @@ $(function() {
 			var vol = $(this).attr('data-vol');
 
 			page = volnavi[vol];
-			cpage = 1;
 
-			update(page, cpage);
+			update(page);
 		});
 
 		// pick chaper
@@ -536,9 +566,8 @@ $(function() {
 			var chap = $(this).attr('data-chap');
 
 			page = chnavi[chap];
-			cpage = 1;
 
-			update(page, cpage);
+			update(page);
 		});
 
 		// pick page
@@ -546,10 +575,9 @@ $(function() {
 
 			var npage = $(this).attr('data-page');
 
-			page = page - (cpage - npage);
-			cpage = npage;
+			page = page - (Number(pagenumber) - npage);
 
-			update(page, cpage);
+			update(page);
 		});
 
 		$('#nextbtn').on('click',function () {
@@ -557,13 +585,11 @@ $(function() {
 			} else {
 				if (singlePage) {
 					page = page+1;
-					cpage = cpage+1;
 				} else {
 					page = chnavi[chnavi.findIndex(i => i > page)];
-					cpage = 1;
 				}
 
-				update(page, cpage);
+				update(page);
 			}
 		})
 
@@ -572,21 +598,11 @@ $(function() {
 			} else {
 				if (singlePage) {
 					page = page-1;
-
-					if(cpage != 1){
-						cpage = cpage-1;
-					} else {
-						chindex = chnavi.indexOf(page + 1);
-						chapternumber = chindex - 1;
-						var pageprch = chnavi[chindex] - chnavi[chindex-1];
-						cpage = pageprch;
-					}
 				} else {
 					page = chnavi[chnavi.findIndex(i => i > page) - 2];
-					cpage = 1;
 				}
 
-				update(page, cpage);
+				update(page);
 			}
 		});
 
@@ -601,13 +617,11 @@ $(function() {
 				} else {
 					if (singlePage) {
 						page = page+1;
-						cpage = cpage+1;
 					} else {
 						page = chnavi[chnavi.findIndex(i => i > page)];
-						cpage = 1;
 					}
 
-					update(page, cpage);
+					update(page);
 				}
 			}
 			//back
@@ -616,21 +630,11 @@ $(function() {
 				} else {
 					if (singlePage) {
 						page = page-1;
-
-						if(cpage != 1){
-							cpage = cpage-1;
-						} else {
-							chindex = chnavi.indexOf(page + 1);
-							chapternumber = chindex - 1;
-							var pageprch = chnavi[chindex] - chnavi[chindex-1];
-							cpage = pageprch;
-						}
 					} else {
 						page = chnavi[chnavi.findIndex(i => i > page) - 2];
-						cpage = 1;
 					}
 
-				update(page, cpage);
+				update(page);
 				}
 			}
 		});
@@ -639,9 +643,8 @@ $(function() {
 	};
 
 	page = Page();
-	cpage = storage('cpage');
 
-	update(page, cpage);
+	update(page);
 	$('#home').stop().show();
 	home = true;
 });;

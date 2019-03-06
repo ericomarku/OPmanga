@@ -63,6 +63,8 @@ button:hover {
     min-height: 120%;
     pointer-events: none;
     padding-bottom: 10px; }
+  #frame .readingPages {
+    display: none; }
 
 @-webkit-keyframes random {
   25% {
