@@ -47,8 +47,8 @@ li {
 *:focus {
   outline: 0; }
 
-.noshow {
-  opacity: 0; }
+.noShow {
+  display: none; }
 
 button:hover {
   cursor: pointer; }
@@ -546,148 +546,135 @@ button:hover {
   box-shadow: 0px 0px 25px black;
   -webkit-animation: activ 4000ms infinite ease-in-out !important; }
 
-#vcpcontainer {
+.vcpbox {
   position: absolute;
-  top: 0px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
-  #vcpcontainer .vcpbox {
-    position: relative;
-    width: 90px; }
-    #vcpcontainer .vcpbox .vcpwhell {
-      position: absolute;
-      top: -40vh;
-      left: -10%;
-      width: 120%;
-      height: 40vh;
-      background: none;
-      overflow-y: scroll;
-      -webkit-transition: top 300ms ease-in-out;
-      -o-transition: top 300ms ease-in-out;
-      transition: top 300ms ease-in-out; }
-      #vcpcontainer .vcpbox .vcpwhell::-webkit-scrollbar {
-        display: none;
-        width: 0px; }
-    #vcpcontainer .vcpbox:hover .vcpwhell {
-      top: 0vh; }
-    #vcpcontainer .vcpbox .fill {
-      position: absolute;
-      top: -30px;
-      left: calc(50% - 30px);
-      width: 60px;
-      height: 60px;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
-      background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
-      background-image: -o-linear-gradient(#0C397C, #28A7F4);
-      background-image: linear-gradient(#0C397C, #28A7F4);
-      border: 1px solid #0C397C;
-      -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
-      box-shadow: 0px 0px 25px 10px #0C397C;
-      border-radius: 30px;
-      -webkit-transition: top 300ms ease-in-out;
-      -o-transition: top 300ms ease-in-out;
-      transition: top 300ms ease-in-out; }
-      #vcpcontainer .vcpbox .fill p {
-        position: absolute;
-        top: 0px;
-        left: calc(50% - 50px);
-        width: 100px;
-        font-size: 30px;
-        font-family: "vcpfont";
-        color: white;
-        text-align: center;
-        -webkit-transform: translateY(-13px);
-        -ms-transform: translateY(-13px);
-        transform: translateY(-13px); }
-    #vcpcontainer .vcpbox:hover .fill {
-      top: calc(40vh - 30px); }
-    #vcpcontainer .vcpbox .vcpnumber {
+  width: 90px; }
+  .vcpbox .vcpwhell {
+    position: absolute;
+    top: -40vh;
+    left: -10%;
+    width: 120%;
+    height: 40vh;
+    background: none;
+    overflow-y: scroll;
+    -webkit-transition: top 300ms ease-in-out;
+    -o-transition: top 300ms ease-in-out;
+    transition: top 300ms ease-in-out; }
+    .vcpbox .vcpwhell::-webkit-scrollbar {
+      display: none;
+      width: 0px; }
+  .vcpbox:hover .vcpwhell {
+    top: 0vh; }
+  .vcpbox .fill {
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
+    background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
+    background-image: -o-linear-gradient(#0C397C, #28A7F4);
+    background-image: linear-gradient(#0C397C, #28A7F4);
+    border: 1px solid #0C397C;
+    -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
+    box-shadow: 0px 0px 25px 10px #0C397C;
+    border-radius: 30px;
+    -webkit-transition: top 300ms ease-in-out;
+    -o-transition: top 300ms ease-in-out;
+    transition: top 300ms ease-in-out; }
+    .vcpbox .fill p {
       position: absolute;
       top: 0px;
-      left: 0px;
-      height: 50px;
-      width: 100%;
-      font-size: 17px;
+      left: calc(50% - 50px);
+      width: 100px;
+      font-size: 30px;
       font-family: "vcpfont";
-      background-color: #222;
       color: white;
-      cursor: default;
-      border-bottom-left-radius: 50% 45px;
-      border-bottom-right-radius: 50% 45px;
-      -webkit-box-shadow: 0px 0px 20px black;
-      box-shadow: 0px 0px 20px black; }
-      #vcpcontainer .vcpbox .vcpnumber p {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 100%;
-        padding-top: 2px;
-        letter-spacing: 2px;
-        text-align: center;
-        margin: 0;
-        line-height: 19px;
-        opacity: 1;
-        -webkit-transition: opacity 300ms linear, top 200ms linear;
-        -o-transition: opacity 300ms linear, top 200ms linear;
-        transition: opacity 300ms linear, top 200ms linear; }
-      #vcpcontainer .vcpbox .vcpnumber .nr {
-        position: absolute;
-        top: 22px;
-        font-size: 21px;
-        -webkit-transition: font-size 200ms ease-in-out, top 200ms ease-in-out;
-        -o-transition: font-size 200ms ease-in-out, top 200ms ease-in-out;
-        transition: font-size 200ms ease-in-out, top 200ms ease-in-out; }
-    #vcpcontainer .vcpbox:hover .vcpnumber {
+      text-align: center;
+      -webkit-transform: translateY(-13px);
+      -ms-transform: translateY(-13px);
+      transform: translateY(-13px); }
+  .vcpbox:hover .fill {
+    top: calc(40vh - 30px); }
+  .vcpbox .vcpnumber {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 100%;
+    font-size: 17px;
+    font-family: "vcpfont";
+    background-color: #222;
+    color: white;
+    cursor: default;
+    border-bottom-left-radius: 50% 45px;
+    border-bottom-right-radius: 50% 45px;
+    -webkit-box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 20px black; }
+    .vcpbox .vcpnumber p {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 100%;
+      padding-top: 2px;
+      letter-spacing: 2px;
+      text-align: center;
+      margin: 0;
+      line-height: 19px;
+      opacity: 1;
+      -webkit-transition: opacity 300ms linear, top 200ms linear;
+      -o-transition: opacity 300ms linear, top 200ms linear;
+      transition: opacity 300ms linear, top 200ms linear; }
+    .vcpbox .vcpnumber .nr {
+      position: absolute;
+      top: 22px;
+      font-size: 21px;
+      -webkit-transition: font-size 200ms ease-in-out, top 200ms ease-in-out;
+      -o-transition: font-size 200ms ease-in-out, top 200ms ease-in-out;
+      transition: font-size 200ms ease-in-out, top 200ms ease-in-out; }
+  .vcpbox:hover .vcpnumber {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
+    background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
+    background-image: -o-linear-gradient(#0C397C, #28A7F4);
+    background-image: linear-gradient(#0C397C, #28A7F4);
+    -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
+    box-shadow: 0px 0px 25px 10px #0C397C; }
+    .vcpbox:hover .vcpnumber p {
+      top: -14px;
+      opacity: 0; }
+    .vcpbox:hover .vcpnumber .nr {
+      font-size: 40px;
+      top: 11px;
+      opacity: 1; }
+  .vcpbox .vcpbtn {
+    height: 50px;
+    width: 50px;
+    border-radius: 35px;
+    border: none;
+    font-size: 30px;
+    font-family: "vcpfont";
+    background-color: #222;
+    margin-left: calc(50% - 25px);
+    color: white;
+    margin-bottom: -10px;
+    -webkit-box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 20px black; }
+    .vcpbox .vcpbtn:hover {
       background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
       background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
       background-image: -o-linear-gradient(#0C397C, #28A7F4);
       background-image: linear-gradient(#0C397C, #28A7F4);
       -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
       box-shadow: 0px 0px 25px 10px #0C397C; }
-      #vcpcontainer .vcpbox:hover .vcpnumber p {
-        top: -14px;
-        opacity: 0; }
-      #vcpcontainer .vcpbox:hover .vcpnumber .nr {
-        font-size: 40px;
-        top: 11px;
-        opacity: 1; }
-    #vcpcontainer .vcpbox .vcpbtn {
-      height: 50px;
-      width: 50px;
-      border-radius: 35px;
-      border: none;
-      font-size: 30px;
-      font-family: "vcpfont";
-      background-color: #222;
-      margin-left: calc(50% - 25px);
-      color: white;
-      margin-bottom: -10px;
-      -webkit-box-shadow: 0px 0px 20px black;
-      box-shadow: 0px 0px 20px black; }
-      #vcpcontainer .vcpbox .vcpbtn:hover {
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
-        background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
-        background-image: -o-linear-gradient(#0C397C, #28A7F4);
-        background-image: linear-gradient(#0C397C, #28A7F4);
-        -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
-        box-shadow: 0px 0px 25px 10px #0C397C; }
-  #vcpcontainer #volbox {
-    left: 50%;
-    -webkit-transform: translateX(-165%);
-    -ms-transform: translateX(-165%);
-    transform: translateX(-165%); }
-  #vcpcontainer #chbox {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%); }
-  #vcpcontainer #pagebox {
-    left: 50%;
-    -webkit-transform: translateX(65%);
-    -ms-transform: translateX(65%);
-    transform: translateX(65%); }
+
+#volbox {
+  left: calc(50% - 90px - 45px - 15px); }
+
+#chbox {
+  left: calc(50% - 45px); }
+
+#pagebox {
+  left: calc(50% + 45px + 15px); }
 
 .controlbtn {
   position: fixed;
