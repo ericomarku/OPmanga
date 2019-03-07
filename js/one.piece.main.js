@@ -348,12 +348,7 @@ $(function() {
 
 		$('#volnr').html("<p>Volume</p><p class='nr'>" + volumenumber + "</p>");
 		$('#chnr').html("<p>Chapter</p><p class='nr'>" + chapternumber + "</p>");
-
-		if (singlePage) {
-			$('#pagenr').html("<p>Page</p><p class='nr'>" + cpage + "</p>");
-		} else {
-			$('#pagenr').html("<p>Page</p><p class='nr'>ALL</p>");
-		}
+		$('#pagenr').html("<p>Page</p><p class='nr'>" + cpage + "</p>");
 
 		$('body,html').animate({scrollTop: 0}, 0);
 
@@ -477,6 +472,9 @@ $(function() {
 			} else {
 				if (!singlePage) {
 					$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+					$('#volbox').removeClass('fullchaptervol');
+					$('#chbox').removeClass('fullchapterch');
+					$('#pagebox').removeClass('fullchapterpage');
 					singlePage = true;
 					update(page);
 				}
@@ -490,9 +488,15 @@ $(function() {
 		$('#singlefullbtn').on('click', function() {
 			if (singlePage) {
 				$('#singlefullbtn').html('<img src="img/op manga/singlepage.png"  width="70%"/>');
+				$('#volbox').addClass('fullchaptervol');
+				$('#chbox').addClass('fullchapterch');
+				$('#pagebox').addClass('fullchapterpage');
 				singlePage = false;
 			} else {
 				$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+				$('#volbox').removeClass('fullchaptervol');
+				$('#chbox').removeClass('fullchapterch');
+				$('#pagebox').removeClass('fullchapterpage');
 				singlePage = true;
 			}
 			update(page);

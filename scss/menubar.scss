@@ -374,14 +374,30 @@
 
  #volbox {
    left: calc(50% - 90px - 45px - 15px);
+   transition: left 500ms ease-in-out;
  }
  #chbox {
    left: calc(50% - 45px);
+   transition: left 500ms ease-in-out;
  }
  #pagebox {
    left: calc(50% + 45px + 15px);
+   transition:
+     left 500ms ease-in-out,
+     opacity 500ms ease-in-out;
  }
 
+.fullchaptervol {
+  left: calc(50% - 90px - 7.5px) !important;
+}
+
+.fullchapterch {
+  left: calc(50% + 7.5px) !important;
+}
+.fullchapterpage {
+  left: calc(50% + 7.5px + 90px + 15px) !important;
+  opacity: 0 !important;
+}
 
 
 .controlbtn {

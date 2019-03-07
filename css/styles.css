@@ -47,8 +47,8 @@ li {
 *:focus {
   outline: 0; }
 
-.noShow {
-  display: none; }
+.noshow {
+  display: none !important; }
 
 button:hover {
   cursor: pointer; }
@@ -668,13 +668,32 @@ button:hover {
       box-shadow: 0px 0px 25px 10px #0C397C; }
 
 #volbox {
-  left: calc(50% - 90px - 45px - 15px); }
+  left: calc(50% - 90px - 45px - 15px);
+  -webkit-transition: left 500ms ease-in-out;
+  -o-transition: left 500ms ease-in-out;
+  transition: left 500ms ease-in-out; }
 
 #chbox {
-  left: calc(50% - 45px); }
+  left: calc(50% - 45px);
+  -webkit-transition: left 500ms ease-in-out;
+  -o-transition: left 500ms ease-in-out;
+  transition: left 500ms ease-in-out; }
 
 #pagebox {
-  left: calc(50% + 45px + 15px); }
+  left: calc(50% + 45px + 15px);
+  -webkit-transition: left 500ms ease-in-out, opacity 500ms ease-in-out;
+  -o-transition: left 500ms ease-in-out, opacity 500ms ease-in-out;
+  transition: left 500ms ease-in-out, opacity 500ms ease-in-out; }
+
+.fullchaptervol {
+  left: calc(50% - 90px - 7.5px) !important; }
+
+.fullchapterch {
+  left: calc(50% + 7.5px) !important; }
+
+.fullchapterpage {
+  left: calc(50% + 7.5px + 90px + 15px) !important;
+  opacity: 0 !important; }
 
 .controlbtn {
   position: fixed;
