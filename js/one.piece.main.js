@@ -74,7 +74,9 @@ $(function() {
 	if (!onMobile) {
 		bubblemaker()
 	} else {
-		// mobileSetup()
+		$('#covergrid').removeClass('standardGrid')
+		$('#covergrid').addClass('mobileGrid')
+		mobileSetup()
 	}
 
 	whellmaker()
@@ -95,7 +97,7 @@ $(function() {
 	function bubblemaker() {
 		var colums = 5;
 		var rows = (volnavi.length-2) / colums;
-		var lastrowscolums = (rows * 5) % 5;
+		var lastrowscolums = (rows * colums) % colums;
 
 		function adding(number) {
 			var nr = number * colums;
@@ -165,7 +167,7 @@ $(function() {
 	function mobileSetup() {
 		var colums = 3;
 		var rows = (volnavi.length-2) / colums;
-		var lastrowscolums = (rows * 5) % 5;
+		var lastrowscolums = (rows * colums) % colums;
 
 		function adding(number) {
 			var nr = number * colums;
@@ -176,28 +178,10 @@ $(function() {
 			if (nr == volnavi.length - 2 - lastrowscolums) {
 				if (lastrowscolums == 1) {
 					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
 					adder(1);
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
 				} else if (lastrowscolums == 2) {
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-					adder(1);
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-					adder(2);
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-				} else if (lastrowscolums == 3) {
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
 					adder(1);
 					adder(2);
-					adder(3);
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-				} else if (lastrowscolums == 4) {
-					adder(1);
-					adder(2);
-					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
-					adder(3);
-					adder(4);
 				}
 			} else {
 				for (var j = 1; j <= colums; j++) {
@@ -207,11 +191,11 @@ $(function() {
 
 			function adder(colum) {
 				if (nr + colum < 10) {
-					fs = '9.5vw';
+					fs = '19vw';
 				} else if (nr + colum < 100) {
-					fs = '8vw';
+					fs = '13vw';
 				} else {
-					fs = '6.5vw';
+					fs = '10vw';
 				}
 				if (nr + colum <= covers) {
 					add = add + '<td><div class="volumecoverframe"><button class="volumecover" data-cover="'+(nr+colum)+'" ><img src="img/op manga/Volume_'+(nr+colum)+'.png"  width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';

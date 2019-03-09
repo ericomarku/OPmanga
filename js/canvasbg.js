@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  if (home || !onMobile) {
+  if (home && !onMobile) {
     var frames = frameRate()
     frameRate(30);
     clear();

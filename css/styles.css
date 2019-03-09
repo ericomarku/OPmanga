@@ -194,29 +194,29 @@ button:hover {
     #home #credit p::first-line {
       font-size: 17px; }
 
-#covergrid {
+.standardGrid {
   z-index: 2;
   margin-top: 35vh;
   margin-bottom: 3.3vw;
   margin-left: auto;
   margin-right: auto;
   pointer-events: none; }
-  #covergrid td {
+  .standardGrid td {
     vertical-align: top; }
-  #covergrid td:nth-child(3) {
+  .standardGrid td:nth-child(3) {
     -webkit-transform: translateY(1.45vw);
     -ms-transform: translateY(1.45vw);
     transform: translateY(1.45vw); }
-  #covergrid td:nth-child(4n + 1) {
+  .standardGrid td:nth-child(4n + 1) {
     -webkit-transform: translateY(-5.45vw);
     -ms-transform: translateY(-5.45vw);
     transform: translateY(-5.45vw); }
-  #covergrid #header {
+  .standardGrid #header {
     margin-top: 1vw;
     margin-bottom: 6.1vw;
     height: 22vh;
     cursor: pointer; }
-  #covergrid .volumecoverframe {
+  .standardGrid .volumecoverframe {
     position: relative;
     overflow: hidden;
     width: 14vw;
@@ -229,7 +229,7 @@ button:hover {
     box-shadow: 0px 0px 2vw white;
     display: none;
     background: none; }
-    #covergrid .volumecoverframe .shadowdiv {
+    .standardGrid .volumecoverframe .shadowdiv {
       position: absolute;
       top: -10px;
       left: -10px;
@@ -241,7 +241,7 @@ button:hover {
       background: none;
       z-index: 2;
       pointer-events: none; }
-    #covergrid .volumecoverframe .volumecover {
+    .standardGrid .volumecoverframe .volumecover {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -254,13 +254,13 @@ button:hover {
       overflow: hidden;
       opacity: 1;
       z-index: 0; }
-      #covergrid .volumecoverframe .volumecover .cover {
+      .standardGrid .volumecoverframe .volumecover .cover {
         position: absolute;
         pointer-events: none;
         top: -4.5vw;
         left: 0px;
         width: 100%; }
-      #covergrid .volumecoverframe .volumecover .number {
+      .standardGrid .volumecoverframe .volumecover .number {
         vertical-align: middle;
         line-height: 1px;
         margin: auto;
@@ -274,12 +274,70 @@ button:hover {
         letter-spacing: -0.6vw;
         text-shadow: 0px 0px 25px white, 0px 0px 25px white;
         z-index: 3; }
-    #covergrid .volumecoverframe:hover {
+    .standardGrid .volumecoverframe:hover {
       -webkit-animation: move 2000ms infinite ease-in-out; }
-  #covergrid .moveRandom {
+  .standardGrid .moveRandom {
     -webkit-animation: random 1500ms ease-in-out; }
-  #covergrid .moveModnar {
+  .standardGrid .moveModnar {
     -webkit-animation: modnar 1500ms ease-in-out; }
+
+.mobileGrid {
+  z-index: 2;
+  margin-top: 35vh;
+  margin-bottom: 3.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none; }
+  .mobileGrid td {
+    vertical-align: top; }
+  .mobileGrid #header {
+    margin-top: 1vw;
+    margin-bottom: 6.1vw;
+    height: 16vh;
+    cursor: pointer; }
+  .mobileGrid .volumecoverframe {
+    position: relative;
+    width: calc(100% - 2.6vw);
+    height: 18.4vh;
+    margin: 1.3vw;
+    /* transform: rotate(30deg); */
+    -webkit-box-shadow: 0px 0px 2vw white;
+    box-shadow: 0px 0px 2vw white;
+    display: none;
+    background: none; }
+    .mobileGrid .volumecoverframe .volumecover {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin: none;
+      background: none;
+      overflow: hidden;
+      opacity: 1;
+      z-index: 0; }
+      .mobileGrid .volumecoverframe .volumecover .cover {
+        position: absolute;
+        pointer-events: none;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%; }
+      .mobileGrid .volumecoverframe .volumecover .number {
+        vertical-align: middle;
+        line-height: 1px;
+        margin: auto;
+        margin-bottom: 1.6vw;
+        pointer-events: none;
+        font-family: "volumefont";
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+        color: #252525;
+        letter-spacing: -0.6vw;
+        text-shadow: 0px 0px 25px white, 0px 0px 25px white;
+        z-index: 3; }
 
 /* menubar */
 #menubar {
