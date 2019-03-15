@@ -256,10 +256,10 @@
    width: 90px;
    .vcpwhell {
      position: absolute;
-     top: -40vh;
+     top: -391.5px;
      left: -10%;
      width: 120%;
-     height: 40vh;
+     height: 391.5px;
      background: none;
      overflow-y: scroll;
      transition: top 300ms ease-in-out;
@@ -279,8 +279,8 @@
      width: 60px;
      height: 60px;
      background-image: linear-gradient($darkBlue, $lightBlue);
-     border: 1px solid $darkBlue;
-     box-shadow: 0px 0px 25px 10px $darkBlue;
+     border: none;
+     box-shadow: 0px 0px 25px 0px $darkBlue;
      border-radius: 30px;
      transition: top 300ms ease-in-out;
      p {
@@ -296,7 +296,9 @@
      }
    }
    &:hover .fill {
-     top: calc(40vh - 30px);
+     top: calc(391.5px - 30px);
+     background-image: linear-gradient($darkBlue, $lightBlue);
+     box-shadow: 0px 0px 25px 10px $darkBlue;
    }
 
    .vcpnumber {

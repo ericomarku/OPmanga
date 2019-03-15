@@ -609,10 +609,10 @@ button:hover {
   width: 90px; }
   .vcpbox .vcpwhell {
     position: absolute;
-    top: -40vh;
+    top: -391.5px;
     left: -10%;
     width: 120%;
-    height: 40vh;
+    height: 391.5px;
     background: none;
     overflow-y: scroll;
     -webkit-transition: top 300ms ease-in-out;
@@ -633,9 +633,9 @@ button:hover {
     background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
     background-image: -o-linear-gradient(#0C397C, #28A7F4);
     background-image: linear-gradient(#0C397C, #28A7F4);
-    border: 1px solid #0C397C;
-    -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
-    box-shadow: 0px 0px 25px 10px #0C397C;
+    border: none;
+    -webkit-box-shadow: 0px 0px 25px 0px #0C397C;
+    box-shadow: 0px 0px 25px 0px #0C397C;
     border-radius: 30px;
     -webkit-transition: top 300ms ease-in-out;
     -o-transition: top 300ms ease-in-out;
@@ -653,7 +653,13 @@ button:hover {
       -ms-transform: translateY(-13px);
       transform: translateY(-13px); }
   .vcpbox:hover .fill {
-    top: calc(40vh - 30px); }
+    top: calc(391.5px - 30px);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0C397C), to(#28A7F4));
+    background-image: -webkit-linear-gradient(#0C397C, #28A7F4);
+    background-image: -o-linear-gradient(#0C397C, #28A7F4);
+    background-image: linear-gradient(#0C397C, #28A7F4);
+    -webkit-box-shadow: 0px 0px 25px 10px #0C397C;
+    box-shadow: 0px 0px 25px 10px #0C397C; }
   .vcpbox .vcpnumber {
     position: absolute;
     top: 0px;

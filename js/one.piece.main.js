@@ -146,11 +146,11 @@ $(function() {
 					fs = '6.5vw';
 				}
 				if (nr + colum <= covers) {
-					add = add + '<td><div class="volumecoverframe"><div class="shadowdiv"></div><button class="volumecover" data-cover="'+(nr+colum)+'" ><img src="img/op manga/Volume_'+(nr+colum)+'.png"  width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
+					add = add + '<td><div class="volumecoverframe"><div class="shadowdiv"></div><button class="volumecover" data-cover="'+(nr+colum)+'" ><img src="img/Vol. covers/Volume_'+(nr+colum)+'.png"  width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
 				} else if (nr + colum > volnavi.length - 2) {
 					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
 				} else {
-					add = add + '<td><div class="volumecoverframe"><div class="shadowdiv"></div><button class="volumecover" data-cover="'+(nr+colum)+'"><img src="img/op manga/Placeholder.png" width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
+					add = add + '<td><div class="volumecoverframe"><div class="shadowdiv"></div><button class="volumecover" data-cover="'+(nr+colum)+'"><img src="img/Placeholder.png" width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
 				}
 			}
 
@@ -198,11 +198,11 @@ $(function() {
 					fs = '10vw';
 				}
 				if (nr + colum <= covers) {
-					add = add + '<td><div class="volumecoverframe"><button class="volumecover" data-cover="'+(nr+colum)+'" ><img src="img/op manga/Volume_'+(nr+colum)+'.png"  width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
+					add = add + '<td><div class="volumecoverframe"><button class="volumecover" data-cover="'+(nr+colum)+'" ><img src="img/Vol. covers/Volume_'+(nr+colum)+'.png"  width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
 				} else if (nr + colum > volnavi.length - 2) {
 					add = add + '<td><div class="volumecoverframe noshow"></div></td>';
 				} else {
-					add = add + '<td><div class="volumecoverframe"><button class="volumecover" data-cover="'+(nr+colum)+'"><img src="img/op manga/Placeholder.png" width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
+					add = add + '<td><div class="volumecoverframe"><button class="volumecover" data-cover="'+(nr+colum)+'"><img src="img/Placeholder.png" width="100%" class="cover"/><div class="number" style="font-size:'+fs+';" id="'+(nr+colum)+'"></div></button></div></td>';
 				}
 			}
 
@@ -413,7 +413,7 @@ $(function() {
 				// }
 			}
 		} else {
-			path = 'img/op manga/needpassword'
+			path = 'img/needpassword'
 			framing(path);
 		}
 
@@ -433,7 +433,7 @@ $(function() {
 		var frame = $('#frame');
 
 		if(page == chnavi[chnavi.length - 2]){
-			frame.append('<img class="framed" src="img/op manga/to be continued.jpg"/><br>');
+			frame.append('<img class="framed" src="img/to be continued.jpg"/><br>');
 		} else {
 			frame.append('<img class="framed" src="' + path + '.png"/><br>');
 		};
@@ -480,7 +480,7 @@ $(function() {
 	// 	var frame = $('#frame');
 	//
 	// 	if(readypage == chnavi[chnavi.length - 2]){
-	// 		frame.append('<img class="readingPages" style="display: none" src="img/op manga/to be continued.jpg"/>');
+	// 		frame.append('<img class="readingPages" style="display: none" src="img/to be continued.jpg"/>');
 	// 	} else {
 	// 		frame.append('<img class="readingPages" style="display: none" src="' + readypath + '.jpg"/>');
 	// 	};
@@ -542,7 +542,7 @@ $(function() {
 				home = false;
 			} else {
 				if (!singlePage) {
-					$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+					$('#singlefullbtn').html('<img src="img/fullchapter.png"  width="70%"/>');
 					$('#volbox').removeClass('fullchaptervol');
 					$('#chbox').removeClass('fullchapterch');
 					$('#pagebox').removeClass('fullchapterpage');
@@ -558,13 +558,13 @@ $(function() {
 		// toggle single page or full chapter
 		$('#singlefullbtn').on('click', function() {
 			if (singlePage) {
-				$('#singlefullbtn').html('<img src="img/op manga/singlepage.png"  width="70%"/>');
+				$('#singlefullbtn').html('<img src="img/singlepage.png"  width="70%"/>');
 				$('#volbox').addClass('fullchaptervol');
 				$('#chbox').addClass('fullchapterch');
 				$('#pagebox').addClass('fullchapterpage');
 				singlePage = false;
 			} else {
-				$('#singlefullbtn').html('<img src="img/op manga/fullchapter.png"  width="70%"/>');
+				$('#singlefullbtn').html('<img src="img/fullchapter.png"  width="70%"/>');
 				$('#volbox').removeClass('fullchaptervol');
 				$('#chbox').removeClass('fullchapterch');
 				$('#pagebox').removeClass('fullchapterpage');
