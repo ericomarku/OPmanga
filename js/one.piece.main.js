@@ -389,10 +389,6 @@ $(function() {
 				path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ pagenumber;
 				framing(path);
 
-				// for (var i = page - 3; i < page + 3; i++) {
-				// 	readingPages(i);
-				// }
-
 			} else {
 				for (var i = 1; i < mainchnavi[chapternumber + 1] + 1; i++) {
 					var chapage
@@ -404,13 +400,6 @@ $(function() {
 					path = 'Manga/'+ manga +' Vol. '+ volumenumber +'/'+ manga +' '+ chapternumber +'/'+ chapage;
 					framing(path);
 				}
-				// for (var i = chnavi[chapternumber-1]; i <= chnavi[chapternumber + 2]; i++) {
-				// 	if (i >= chnavi[chnavi.length -1]){
-				//
-				// 	} else {
-				// 		readingPages(i);
-				// 	}
-				// }
 			}
 		} else {
 			path = 'img/needpassword'
@@ -435,23 +424,37 @@ $(function() {
 		if(page == chnavi[chnavi.length - 2]){
 			frame.append('<img class="framed" src="img/to be continued.jpg"/><br>');
 		} else {
-			frame.append('<img class="framed" src="' + path + '.png"/><br>');
-		};
+			var tester = new Image();
+			tester.onload=function() { // when .png ok
+				frame.append('<img class="framed" src="' + path + '.png"/><br>');
+			};
+			tester.onerror=function() { // when .png failed
+				frame.append('<img class="framed" src="' + path + '.jpg"/><br>');
+				clearConsole();
+			};
+			tester.src = path + '.png';
+		}
 
-		var framed = $('.framed');
-
-		framed.on('error', function () {
-			var newpath = $(this).attr('src');
-			var filetype = newpath.substring(newpath.length - 3, newpath.length);
-
-			newpath = newpath.substring(0, newpath.length - 4);
-
-			if (filetype == 'png') {
-				$(this).attr('src', newpath + '.jpg')
-			}
-
-			clearConsole();
-		});
+		// if(page == chnavi[chnavi.length - 2]){
+		// 	frame.append('<img class="framed" src="img/to be continued.jpg"/><br>');
+		// } else {
+		// 	frame.append('<img class="framed" src="' + path + '.png"/><br>');
+		// };
+		//
+		// var framed = $('.framed');
+		//
+		// framed.on('error', function () {
+		// 	var newpath = $(this).attr('src');
+		// 	var filetype = newpath.substring(newpath.length - 3, newpath.length);
+		//
+		// 	newpath = newpath.substring(0, newpath.length - 4);
+		//
+		// 	if (filetype == 'png') {
+		// 		$(this).attr('src', newpath + '.jpg')
+		// 	}
+		//
+		// 	// clearConsole();
+		// });
 	}
 
 
