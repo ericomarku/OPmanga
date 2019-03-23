@@ -420,6 +420,7 @@ $(function() {
 			frame.append('<img class="framed" src="img/to be continued.jpg"/><br>');
 		} else {
 			var tester = new Image();
+
 			tester.onload=function() { // when .png ok
 				frame.append('<img class="framed" src="' + path + '.png"/><br>');
 				if (!singlePage) {
@@ -433,6 +434,7 @@ $(function() {
 				}
 				clearConsole();
 			};
+			
 			tester.src = path + '.png';
 		}
 	}
