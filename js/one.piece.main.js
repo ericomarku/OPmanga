@@ -385,8 +385,7 @@ $(function() {
 				framing(1)
 			}
 		} else {
-			path = 'img/needpassword'
-			framing(path);
+			$('#frame').append('<img class="framed" src="img/needpassword.jpg"/>');
 		}
 
 		$('#volnr').html("<p>Volume</p><p class='nr'>" + volumenumber + "</p>");
@@ -432,6 +431,7 @@ $(function() {
 				if (!singlePage) {
 					framing(i+1)
 				}
+				clearConsole();
 			};
 			tester.src = path + '.png';
 		}
