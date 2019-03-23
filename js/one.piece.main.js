@@ -48,10 +48,10 @@ if( navigator.userAgent.match(/Android/i)
 	 onMobile = true;
  }
 
- for (var i = 0; i < covers; i++) {
-	 coverload = new Image();
-	 coverload.src = 'img/Vol. covers/Volume_'+i+'.png'
- }
+for (var i = 1; i <= covers; i++) {
+	coverload = new Image();
+	coverload.src = 'img/Vol. covers/Volume_'+i+'.png'
+}
 
 $(function() {
 	var chnavi = [];
